@@ -143,35 +143,35 @@ public func ClearColor() -> UIColor {
 // MARK: - Light Shades Shorthand
 
 public func FlatBlack() -> UIColor {
-	return UIColor.flatBlack()
+    return UIColor.flatBlack()
 }
 
 public func FlatBlue() -> UIColor {
-	return UIColor.flatBlue()
+    return UIColor.flatBlue()
 }
 
 public func FlatBrown() -> UIColor {
-	return UIColor.flatBrown()
+    return UIColor.flatBrown()
 }
 
 public func FlatCoffee() -> UIColor {
-	return UIColor.flatCoffee()
+    return UIColor.flatCoffee()
 }
 
 public func FlatForestGreen() -> UIColor {
-	return UIColor.flatForestGreen()
+    return UIColor.flatForestGreen()
 }
 
 public func FlatGray() -> UIColor {
-	return UIColor.flatGray()
+    return UIColor.flatGray()
 }
 
 public func FlatGreen() -> UIColor {
-	return UIColor.flatGreen()
+    return UIColor.flatGreen()
 }
 
 public func FlatLime() -> UIColor {
-	return UIColor.flatLime()
+    return UIColor.flatLime()
 }
 
 public func FlatMagenta() -> UIColor {
@@ -245,7 +245,7 @@ public func FlatBlackDark() -> UIColor {
 }
 
 public func FlatBlueDark() -> UIColor {
-    return UIColor.flatBlueDark()
+	return UIColor.flatBlueDark()
 }
 
 public func FlatBrownDark() -> UIColor {

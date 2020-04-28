@@ -27,7 +27,7 @@ class QuizzyUITests: XCTestCase {
         let button      = app.buttons.element
         
         XCTAssert(button.exists)
-        XCTAssertEqual(button.label, "start playing")
+        XCTAssertEqual(button.label, "START PLAYING")
     }
     
     func testLaunchPerformance() throws {

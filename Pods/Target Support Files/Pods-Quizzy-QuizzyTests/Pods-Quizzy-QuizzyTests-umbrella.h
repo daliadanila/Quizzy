@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_QuizzyTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_QuizzyTestsVersionString[];
+FOUNDATION_EXPORT double Pods_Quizzy_QuizzyTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Quizzy_QuizzyTestsVersionString[];
 
