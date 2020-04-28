@@ -18,6 +18,9 @@
 		2B63A501245728B20092AF67 /* QuizzyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A500245728B20092AF67 /* QuizzyUITests.swift */; };
 		2BD6AA0A245839A300358444 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA09245839A300358444 /* PrimaryButtonView.swift */; };
 		2BD6AA0C24584D2A00358444 /* SecondaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0B24584D2A00358444 /* SecondaryButtonView.swift */; };
+		2BD6AA0E2458828B00358444 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0D2458828B00358444 /* CardView.swift */; };
+		2BD6AA10245889E000358444 /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0F245889E000358444 /* CardContainerView.swift */; };
+		2BD6AA122458901B00358444 /* StartScreenBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA112458901B00358444 /* StartScreenBackgroundView.swift */; };
 		D54A7491F1CB6986BE76E7A8 /* Pods_Quizzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528F95BF1189FAE045D37215 /* Pods_Quizzy.framework */; };
 		E4FD7DFAA3AC6E2E56A03D24 /* Pods_Quizzy_QuizzyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D543A0B2A0128B3838E7A6B7 /* Pods_Quizzy_QuizzyTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +63,9 @@
 		2B63A502245728B20092AF67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BD6AA09245839A300358444 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
 		2BD6AA0B24584D2A00358444 /* SecondaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonView.swift; sourceTree = "<group>"; };
+		2BD6AA0D2458828B00358444 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		2BD6AA0F245889E000358444 /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
+		2BD6AA112458901B00358444 /* StartScreenBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenBackgroundView.swift; sourceTree = "<group>"; };
 		499E6582D9105642C8F3F58F /* Pods-Quizzy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzy.release.xcconfig"; path = "Target Support Files/Pods-Quizzy/Pods-Quizzy.release.xcconfig"; sourceTree = "<group>"; };
 		528F95BF1189FAE045D37215 /* Pods_Quizzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quizzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ED6C0C6F5B1C2CFBF00E71 /* Pods-QuizzyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzyTests.release.xcconfig"; path = "Target Support Files/Pods-QuizzyTests/Pods-QuizzyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +146,6 @@
 				2BD6AA082458399300358444 /* Views */,
 				2B63A4DE245728AD0092AF67 /* AppDelegate.swift */,
 				2B63A4E0245728AD0092AF67 /* SceneDelegate.swift */,
-				2B63A4E2245728AD0092AF67 /* ContentView.swift */,
 				2B63A4E4245728B10092AF67 /* Assets.xcassets */,
 				2B63A4E9245728B10092AF67 /* LaunchScreen.storyboard */,
 				2B63A4EC245728B10092AF67 /* Info.plist */,
@@ -178,10 +183,30 @@
 		2BD6AA082458399300358444 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B63A4E2245728AD0092AF67 /* ContentView.swift */,
+				2BD6AA0D2458828B00358444 /* CardView.swift */,
+				2BD6AA142458912400358444 /* Containers */,
+				2BD6AA132458911900358444 /* ButtonViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BD6AA132458911900358444 /* ButtonViews */ = {
+			isa = PBXGroup;
+			children = (
 				2BD6AA09245839A300358444 /* PrimaryButtonView.swift */,
 				2BD6AA0B24584D2A00358444 /* SecondaryButtonView.swift */,
 			);
-			path = Views;
+			path = ButtonViews;
+			sourceTree = "<group>";
+		};
+		2BD6AA142458912400358444 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6AA0F245889E000358444 /* CardContainerView.swift */,
+				2BD6AA112458901B00358444 /* StartScreenBackgroundView.swift */,
+			);
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		E1A5CF5FD3D2CCE23F51C10A /* Frameworks */ = {
@@ -454,7 +479,10 @@
 				2B63A4DF245728AD0092AF67 /* AppDelegate.swift in Sources */,
 				2B63A4E1245728AD0092AF67 /* SceneDelegate.swift in Sources */,
 				2BD6AA0C24584D2A00358444 /* SecondaryButtonView.swift in Sources */,
+				2BD6AA122458901B00358444 /* StartScreenBackgroundView.swift in Sources */,
 				2B63A4E3245728AD0092AF67 /* ContentView.swift in Sources */,
+				2BD6AA0E2458828B00358444 /* CardView.swift in Sources */,
+				2BD6AA10245889E000358444 /* CardContainerView.swift in Sources */,
 				2BD6AA0A245839A300358444 /* PrimaryButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

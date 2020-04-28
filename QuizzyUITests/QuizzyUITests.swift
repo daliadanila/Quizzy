@@ -17,6 +17,7 @@ class QuizzyUITests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
+        
     }
     
     func testGetStartedScreen() throws {
@@ -24,15 +25,26 @@ class QuizzyUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let primaryButton      = app.buttons["startPlayingButton"]
-        
-        let secondaryButton = app.buttons["howToPlayButton"]
+        let primaryButton   = app.buttons["startPlayingButton"]
         
         XCTAssert(primaryButton.exists)
         XCTAssertEqual(primaryButton.label, "START PLAYING")
+    }
+    
+    func testInitialStateQuestionCard() throws {
         
-        XCTAssert(secondaryButton.exists)
-        XCTAssertEqual(secondaryButton.label, "How to play ?")
+        let app = XCUIApplication()
+        app.launch()
+        
+        let primaryButton      = app.buttons["startPlayingButton"]
+        
+        primaryButton.tap()
+        
+        let questionNumberLabel = app.staticTexts["1/10"]
+        
+        XCTAssert(questionNumberLabel.exists)
+        XCTAssertEqual(questionNumberLabel.label, "1/10")
+ 
     }
     
     func testLaunchPerformance() throws {
