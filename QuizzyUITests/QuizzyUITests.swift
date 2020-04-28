@@ -24,10 +24,15 @@ class QuizzyUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let button      = app.buttons.element
+        let primaryButton      = app.buttons["startPlayingButton"]
         
-        XCTAssert(button.exists)
-        XCTAssertEqual(button.label, "START PLAYING")
+        let secondaryButton = app.buttons["howToPlayButton"]
+        
+        XCTAssert(primaryButton.exists)
+        XCTAssertEqual(primaryButton.label, "START PLAYING")
+        
+        XCTAssert(secondaryButton.exists)
+        XCTAssertEqual(secondaryButton.label, "How to play ?")
     }
     
     func testLaunchPerformance() throws {

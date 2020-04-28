@@ -1,5 +1,5 @@
 //
-//  RoundedButtonView.swift
+//  PrimaryButtonView.swift
 //  Quizzy
 //
 //  Created by Dalia on 28/04/2020.
@@ -9,7 +9,7 @@
 import SwiftUI
 import ChameleonFramework
 
-struct RoundedButtonView: View {
+struct PrimaryButtonView: View {
     
     var title: String
     
@@ -33,8 +33,9 @@ struct RoundedButtonView: View {
             }
             
             Text(self.title)
-                .font(.callout)
+                .font(.footnote)
                 .fontWeight(.bold)
+                .frame(width: 200)
             
             
         }
@@ -42,14 +43,10 @@ struct RoundedButtonView: View {
         .foregroundColor(Color(FlatGreenDark()))
         .background(Color.white)
         .cornerRadius(.infinity)
-        
-        
     }
 }
-struct RoundedButtonView_Previews: PreviewProvider {
+struct PrimaryButtonView_Previews: PreviewProvider {
     static var previews: some View {
-         RoundedButtonView(title: "Share", icon: "square.and.arrow.up")
-        
-            .background(Color.red)
+        PrimaryButtonView(title: "Share", icon: "square.and.arrow.up")
     }
 }

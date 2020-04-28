@@ -16,7 +16,8 @@
 		2B63A4EB245728B10092AF67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B63A4E9245728B10092AF67 /* LaunchScreen.storyboard */; };
 		2B63A4F6245728B20092AF67 /* QuizzyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A4F5245728B20092AF67 /* QuizzyTests.swift */; };
 		2B63A501245728B20092AF67 /* QuizzyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A500245728B20092AF67 /* QuizzyUITests.swift */; };
-		2BD6AA0A245839A300358444 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA09245839A300358444 /* RoundedButtonView.swift */; };
+		2BD6AA0A245839A300358444 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA09245839A300358444 /* PrimaryButtonView.swift */; };
+		2BD6AA0C24584D2A00358444 /* SecondaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0B24584D2A00358444 /* SecondaryButtonView.swift */; };
 		D54A7491F1CB6986BE76E7A8 /* Pods_Quizzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528F95BF1189FAE045D37215 /* Pods_Quizzy.framework */; };
 		E4FD7DFAA3AC6E2E56A03D24 /* Pods_Quizzy_QuizzyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D543A0B2A0128B3838E7A6B7 /* Pods_Quizzy_QuizzyTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,7 +58,8 @@
 		2B63A4FC245728B20092AF67 /* QuizzyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizzyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B63A500245728B20092AF67 /* QuizzyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzyUITests.swift; sourceTree = "<group>"; };
 		2B63A502245728B20092AF67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BD6AA09245839A300358444 /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
+		2BD6AA09245839A300358444 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
+		2BD6AA0B24584D2A00358444 /* SecondaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonView.swift; sourceTree = "<group>"; };
 		499E6582D9105642C8F3F58F /* Pods-Quizzy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzy.release.xcconfig"; path = "Target Support Files/Pods-Quizzy/Pods-Quizzy.release.xcconfig"; sourceTree = "<group>"; };
 		528F95BF1189FAE045D37215 /* Pods_Quizzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quizzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ED6C0C6F5B1C2CFBF00E71 /* Pods-QuizzyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzyTests.release.xcconfig"; path = "Target Support Files/Pods-QuizzyTests/Pods-QuizzyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,7 +178,8 @@
 		2BD6AA082458399300358444 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2BD6AA09245839A300358444 /* RoundedButtonView.swift */,
+				2BD6AA09245839A300358444 /* PrimaryButtonView.swift */,
+				2BD6AA0B24584D2A00358444 /* SecondaryButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,8 +453,9 @@
 			files = (
 				2B63A4DF245728AD0092AF67 /* AppDelegate.swift in Sources */,
 				2B63A4E1245728AD0092AF67 /* SceneDelegate.swift in Sources */,
+				2BD6AA0C24584D2A00358444 /* SecondaryButtonView.swift in Sources */,
 				2B63A4E3245728AD0092AF67 /* ContentView.swift in Sources */,
-				2BD6AA0A245839A300358444 /* RoundedButtonView.swift in Sources */,
+				2BD6AA0A245839A300358444 /* PrimaryButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

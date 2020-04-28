@@ -23,25 +23,44 @@ struct ContentView: View {
                 .frame(width: 600, height: 1000)
                 .opacity(0.3)
             
+            Image("QuizzyText")
+                .resizable()
+                .frame(width: 300, height: 100)
             
-            VStack(alignment: .leading) {
+            
+            VStack() {
                 
                 Spacer()
                 
                 Button(action: {
                     
-                    Text("start playing")
+                    
                     
                 }) {
-                    RoundedButtonView(title: "START PLAYING")
+                    SecondaryButtonView(title: "How to play ?")
+                        
+                        .accessibility(identifier: "howToPlayButton")
+                        
+                        .padding(.bottom, 20)
+                }
+                
+                Button(action: {
+                    
+                    
+                    
+                }) {
+                    PrimaryButtonView(title: "START PLAYING")
+                        
+                        .accessibility(identifier: "startPlayingButton")
+                        
                         .padding(.bottom, 100)
                     
-                    
                 }
+                
             }
             
         }
-    
+        
     }
 }
 
