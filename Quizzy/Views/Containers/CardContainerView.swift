@@ -11,14 +11,58 @@ import ChameleonFramework
 
 struct CardContainerView: View {
     
+    @State var quitGame: Bool = false
+    
     var body: some View {
-        
+
         ZStack {
             
             LinearGradient(gradient: Gradient(colors: [Color(FlatMagenta()), Color(FlatPlumDark())]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
             
-           CardView()
+            if quitGame {
+                
+                ContentView()
+            }
+            else {
+                
+                VStack {
+                    HStack {
+                        
+                        Button(action: {
+                            
+                            self.quitGame = true
+                            
+                        }) {
+                            
+                            RectangleImageView(icon: "xmark")
+                                .padding(.leading, 15)
+                                .padding(.top, 15)
+                                .accessibility(identifier: "closeButton")
+                        }
+                        Spacer()
+                        
+                        Text("0 Points")
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        Text("3 Lives")
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.leading)
+                            .padding(.trailing, 15)
+                        
+                        
+                    }
+                    .padding(.bottom, -25)
+                    
+                    CardView()
+                }
+                .edgesIgnoringSafeArea(.bottom)
+            }
+            
         }
         
     }

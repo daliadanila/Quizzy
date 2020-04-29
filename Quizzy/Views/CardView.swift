@@ -22,21 +22,15 @@ struct CardView: View {
                 
                 VStack {
                     HStack {
-                        Text("1/10")
-                            .font(.footnote)
-                            .fontWeight(.bold)
+                        Spacer()
+                        
+                        Text("Question 1/10")
+                            .font(.callout)
+                            .fontWeight(.regular)
                         
                         Spacer()
                         
-                        Text("0 Points")
-                            .font(.footnote)
-                            .fontWeight(.bold)
                         
-                        Spacer()
-                        
-                        Text("3 Lives")
-                            .font(.footnote)
-                            .fontWeight(.bold)
                     }
                     .padding(.top, 70)
                     .padding(.leading, 50)

@@ -13,25 +13,15 @@ struct PrimaryView: View {
     
     var title: String
     
-    var icon: String
-    
-    init(title: String, icon: String? = nil) {
+    init(title: String) {
         
         self.title = title
-        
-        self.icon = icon ?? ""
     }
     
     var body: some View {
         
         HStack {
-            
-            if (self.icon.count != 0) {
-                
-                Image(systemName: icon)
-                    .font(.system(size: 18, weight: .semibold))
-            }
-            
+        
             Text(self.title)
                 .font(.footnote)
                 .fontWeight(.bold)
@@ -47,6 +37,6 @@ struct PrimaryView: View {
 }
 struct PrimaryView_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryView(title: "Share", icon: "square.and.arrow.up")
+        PrimaryView(title: "Share")
     }
 }

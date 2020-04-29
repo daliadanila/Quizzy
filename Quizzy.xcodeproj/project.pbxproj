@@ -19,6 +19,7 @@
 		2BA4466E2459946900CB03D8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2BA4466D2459946900CB03D8 /* Lottie */; };
 		2BA446E02459952700CB03D8 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446DF2459952700CB03D8 /* LottieView.swift */; };
 		2BA446E624599C4700CB03D8 /* Timer.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA446E524599C4700CB03D8 /* Timer.json */; };
+		2BA446E92459AA2800CB03D8 /* RectangleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446E82459AA2800CB03D8 /* RectangleImageView.swift */; };
 		2BD6AA0A245839A300358444 /* PrimaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA09245839A300358444 /* PrimaryView.swift */; };
 		2BD6AA0C24584D2A00358444 /* SecondaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0B24584D2A00358444 /* SecondaryView.swift */; };
 		2BD6AA0E2458828B00358444 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0D2458828B00358444 /* CardView.swift */; };
@@ -66,6 +67,7 @@
 		2B63A502245728B20092AF67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA446DF2459952700CB03D8 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		2BA446E524599C4700CB03D8 /* Timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timer.json; sourceTree = "<group>"; };
+		2BA446E82459AA2800CB03D8 /* RectangleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleImageView.swift; sourceTree = "<group>"; };
 		2BD6AA09245839A300358444 /* PrimaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryView.swift; sourceTree = "<group>"; };
 		2BD6AA0B24584D2A00358444 /* SecondaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryView.swift; sourceTree = "<group>"; };
 		2BD6AA0D2458828B00358444 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				2BD6AA082458399300358444 /* Views */,
 				2B63A4DE245728AD0092AF67 /* AppDelegate.swift */,
 				2B63A4E0245728AD0092AF67 /* SceneDelegate.swift */,
+				2BA446E724599D5D00CB03D8 /* Animations */,
 				2B63A4E4245728B10092AF67 /* Assets.xcassets */,
 				2B63A4E9245728B10092AF67 /* LaunchScreen.storyboard */,
 				2B63A4EC245728B10092AF67 /* Info.plist */,
@@ -197,23 +200,15 @@
 		2BD6AA082458399300358444 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2BA446E724599D5D00CB03D8 /* Animations */,
 				2B63A4E2245728AD0092AF67 /* ContentView.swift */,
-				2BD6AA0D2458828B00358444 /* CardView.swift */,
 				2BA446DF2459952700CB03D8 /* LottieView.swift */,
-				2BD6AA142458912400358444 /* Containers */,
-				2BD6AA132458911900358444 /* ButtonViews */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		2BD6AA132458911900358444 /* ButtonViews */ = {
-			isa = PBXGroup;
-			children = (
 				2BD6AA09245839A300358444 /* PrimaryView.swift */,
 				2BD6AA0B24584D2A00358444 /* SecondaryView.swift */,
+				2BD6AA0D2458828B00358444 /* CardView.swift */,
+				2BA446E82459AA2800CB03D8 /* RectangleImageView.swift */,
+				2BD6AA142458912400358444 /* Containers */,
 			);
-			path = ButtonViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2BD6AA142458912400358444 /* Containers */ = {
@@ -503,6 +498,7 @@
 				2B63A4E1245728AD0092AF67 /* SceneDelegate.swift in Sources */,
 				2BA446E02459952700CB03D8 /* LottieView.swift in Sources */,
 				2BD6AA0C24584D2A00358444 /* SecondaryView.swift in Sources */,
+				2BA446E92459AA2800CB03D8 /* RectangleImageView.swift in Sources */,
 				2BD6AA122458901B00358444 /* StartScreenBackgroundView.swift in Sources */,
 				2B63A4E3245728AD0092AF67 /* ContentView.swift in Sources */,
 				2BD6AA0E2458828B00358444 /* CardView.swift in Sources */,

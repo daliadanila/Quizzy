@@ -25,10 +25,10 @@ class QuizzyUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let primaryButton   = app.buttons["startPlayingButton"]
+        let startButton   = app.buttons["startPlayingButton"]
         
-        XCTAssert(primaryButton.exists)
-        XCTAssertEqual(primaryButton.label, "START PLAYING")
+        XCTAssert(startButton.exists)
+        XCTAssertEqual(startButton.label, "START PLAYING")
     }
     
     func testInitialStateQuestionCard() throws {
@@ -36,14 +36,14 @@ class QuizzyUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let primaryButton      = app.buttons["startPlayingButton"]
+        let startButton      = app.buttons["startPlayingButton"]
         
-        primaryButton.tap()
+        startButton.tap()
         
-        let questionCountLabel = app.staticTexts["1/10"]
+        let questionCountLabel = app.staticTexts["Question 1/10"]
         
         XCTAssert(questionCountLabel.exists)
-        XCTAssertEqual(questionCountLabel.label, "1/10")
+        XCTAssertEqual(questionCountLabel.label, "Question 1/10")
         
         let pointsCountLabel = app.staticTexts["0 Points"]
         
@@ -75,6 +75,24 @@ class QuizzyUITests: XCTestCase {
         XCTAssert(thirdAnswerButton.exists)
         XCTAssert(forthAnswerButton.exists)
         
+    }
+    
+    func testCloseQuestionView() throws {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let startButton      = app.buttons["startPlayingButton"]
+        
+        startButton.tap()
+        
+        let dismissButton = app.buttons["closeButton"]
+        
+        XCTAssert(dismissButton.exists)
+        
+        dismissButton.tap()
+        
+        XCTAssert(startButton.exists)
     }
     
     func testLaunchPerformance() throws {
