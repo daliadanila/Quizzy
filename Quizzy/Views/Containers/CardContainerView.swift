@@ -14,7 +14,7 @@ struct CardContainerView: View {
     @State var quitGame: Bool = false
     
     var body: some View {
-
+        
         ZStack {
             
             LinearGradient(gradient: Gradient(colors: [Color(FlatMagenta()), Color(FlatPlumDark())]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -43,14 +43,16 @@ struct CardContainerView: View {
                         Spacer()
                         
                         Text("0 Points")
-                            .font(.footnote)
+                            .font(.body)
                             .fontWeight(.bold)
+                            .foregroundColor(Color.white)
                         
                         Spacer()
                         
                         Text("3 Lives")
-                            .font(.footnote)
-                            .fontWeight(.bold)
+                            .font(.body)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
                             .padding(.trailing, 15)
                         
