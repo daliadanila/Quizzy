@@ -1,5 +1,5 @@
 //
-//  SecondaryButtonView.swift
+//  SecondaryView.swift
 //  Quizzy
 //
 //  Created by Dalia on 28/04/2020.
@@ -9,7 +9,7 @@
 import SwiftUI
 import ChameleonFramework
 
-struct SecondaryButtonView: View {
+struct SecondaryView: View {
     
     var title: String
     
@@ -34,8 +34,8 @@ struct SecondaryButtonView: View {
     }
 }
 
-struct SecondaryButtonView_Previews: PreviewProvider {
+struct SecondaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondaryButtonView(title: "How to play?")
+        SecondaryView(title: "How to play?")
     }
 }

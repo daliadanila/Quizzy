@@ -1,5 +1,5 @@
 //
-//  PrimaryButtonView.swift
+//  PrimaryView.swift
 //  Quizzy
 //
 //  Created by Dalia on 28/04/2020.
@@ -9,7 +9,7 @@
 import SwiftUI
 import ChameleonFramework
 
-struct PrimaryButtonView: View {
+struct PrimaryView: View {
     
     var title: String
     
@@ -45,8 +45,8 @@ struct PrimaryButtonView: View {
         .cornerRadius(.infinity)
     }
 }
-struct PrimaryButtonView_Previews: PreviewProvider {
+struct PrimaryView_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButtonView(title: "Share", icon: "square.and.arrow.up")
+        PrimaryView(title: "Share", icon: "square.and.arrow.up")
     }
 }

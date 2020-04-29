@@ -35,7 +35,7 @@ struct ContentView: View {
                         self.startedPlaying = true
                         
                     }) {
-                        PrimaryButtonView(title: "START PLAYING")
+                        PrimaryView(title: "START PLAYING")
                             .padding(.bottom, 300)
                             .accessibility(identifier: "startPlayingButton")
                     }

@@ -63,7 +63,7 @@ struct CardView: View {
                         
                     }) {
                         
-                        SecondaryButtonView(title: "First answer")
+                        SecondaryView(title: "First answer")
                             .accessibility(identifier: "firstAnswerButton")
                     }
                     .padding(.top, 10)
@@ -72,7 +72,7 @@ struct CardView: View {
                         
                         
                     }) {
-                        SecondaryButtonView(title: "Second answer")
+                        SecondaryView(title: "Second answer")
                             .accessibility(identifier: "secondAnswerButton")
                     }
                     .padding(.top, 10)
@@ -83,7 +83,7 @@ struct CardView: View {
                         
                     }) {
                         
-                        SecondaryButtonView(title: "Third answer")
+                        SecondaryView(title: "Third answer")
                             .accessibility(identifier: "thirdAnswerButton")
                     }
                     .padding(.top, 10)
@@ -94,7 +94,7 @@ struct CardView: View {
                         
                     }) {
                         
-                        SecondaryButtonView(title: "Forth answer")
+                        SecondaryView(title: "Forth answer")
                             .accessibility(identifier: "forthAnswerButton")
                     }
                     .padding(.top, 10)
