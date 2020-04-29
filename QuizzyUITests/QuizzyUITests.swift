@@ -40,11 +40,41 @@ class QuizzyUITests: XCTestCase {
         
         primaryButton.tap()
         
-        let questionNumberLabel = app.staticTexts["1/10"]
+        let questionCountLabel = app.staticTexts["1/10"]
         
-        XCTAssert(questionNumberLabel.exists)
-        XCTAssertEqual(questionNumberLabel.label, "1/10")
- 
+        XCTAssert(questionCountLabel.exists)
+        XCTAssertEqual(questionCountLabel.label, "1/10")
+        
+        let pointsCountLabel = app.staticTexts["0 Points"]
+        
+        XCTAssert(pointsCountLabel.exists)
+        XCTAssertEqual(pointsCountLabel.label, "0 Points")
+        
+        let livesCountLabel = app.staticTexts["3 Lives"]
+        
+        XCTAssert(livesCountLabel.exists)
+        XCTAssertEqual(livesCountLabel.label, "3 Lives")
+        
+        let categoryLabel = app.staticTexts["Category"]
+        
+        XCTAssert(categoryLabel.exists)
+        XCTAssertEqual(categoryLabel.label, "Category")
+        
+        let questionLabel = app.staticTexts["Question"]
+        
+        XCTAssert(questionLabel.exists)
+        XCTAssertEqual(questionLabel.label, "Question")
+        
+        let firstAnswerButton       = app.buttons["firstAnswerButton"]
+        let secondAnswerButton      = app.buttons["secondAnswerButton"]
+        let thirdAnswerButton      = app.buttons["thirdAnswerButton"]
+        let forthAnswerButton      = app.buttons["forthAnswerButton"]
+        
+        XCTAssert(firstAnswerButton.exists)
+        XCTAssert(secondAnswerButton.exists)
+        XCTAssert(thirdAnswerButton.exists)
+        XCTAssert(forthAnswerButton.exists)
+        
     }
     
     func testLaunchPerformance() throws {

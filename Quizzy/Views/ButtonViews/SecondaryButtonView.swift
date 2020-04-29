@@ -23,12 +23,12 @@ struct SecondaryButtonView: View {
         
         Text(self.title)
             .font(.footnote)
-            .frame(width: 100, height: 30)
-            .foregroundColor(Color.white)
+            .frame(width: 300, height: 50)
+            .foregroundColor(.black)
             .overlay(
                 RoundedRectangle(cornerRadius: .infinity)
                     .stroke(lineWidth: 1.0)
-                    .foregroundColor(Color.white)
+                    .foregroundColor(.black)
         )
         
     }

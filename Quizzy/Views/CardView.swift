@@ -17,12 +17,91 @@ struct CardView: View {
                 .padding(.top, 30)
                 .padding(.bottom, 50)
             
-            
             VStack {
-                Text("1/10")
+                
+                VStack {
+                    HStack {
+                        Text("1/10")
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        Text("0 Points")
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        Text("3 Lives")
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                    }
+                    .padding(.top, 70)
+                    .padding(.leading, 50)
+                    .padding(.trailing, 50)
+                    
+                    Spacer()
+                    
+                    Text("Category")
+                        .font(.caption)
+                        .fontWeight(.light)
+                    
+                    Text("Question")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    
+                    
+                }
+                
+                VStack {
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        
+                        
+                    }) {
+                        
+                        SecondaryButtonView(title: "First answer")
+                            .accessibility(identifier: "firstAnswerButton")
+                    }
+                    .padding(.top, 10)
+                    
+                    Button(action: {
+                        
+                        
+                    }) {
+                        SecondaryButtonView(title: "Second answer")
+                            .accessibility(identifier: "secondAnswerButton")
+                    }
+                    .padding(.top, 10)
+                    
+                    
+                    Button(action: {
+                        
+                        
+                    }) {
+                        
+                        SecondaryButtonView(title: "Third answer")
+                            .accessibility(identifier: "thirdAnswerButton")
+                    }
+                    .padding(.top, 10)
+                    
+                    
+                    Button(action: {
+                        
+                        
+                    }) {
+                        
+                        SecondaryButtonView(title: "Forth answer")
+                            .accessibility(identifier: "forthAnswerButton")
+                    }
+                    .padding(.top, 10)
+                    
+                    Spacer()
+                }
             }
-            .padding(.top, 70)
-            .padding(.leading, 50)
         }
     }
 }
@@ -30,6 +109,6 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView()
-        .background(Color.gray)
+            .background(Color.gray)
     }
 }
