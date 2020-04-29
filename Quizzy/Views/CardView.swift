@@ -10,13 +10,10 @@ import SwiftUI
 
 struct CardView: View {
     
-    let card: Card
-    
     var body: some View {
         
         ZStack(alignment: .topLeading) {
             Rectangle().fill(Color.white).cornerRadius(8)
-                .shadow(radius: 50)
                 .padding()
                 .padding(.top, 30)
                 .padding(.bottom, 50)
@@ -45,7 +42,8 @@ struct CardView: View {
                     .padding(.leading, 50)
                     .padding(.trailing, 50)
                     
-                    Spacer()
+                    LottieView(filename: "Timer")
+                        .frame(width: 70)
                     
                     Text("Category")
                         .font(.caption)
@@ -112,7 +110,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(card: Card.example)
+        CardView()
             .background(Color.gray)
     }
 }

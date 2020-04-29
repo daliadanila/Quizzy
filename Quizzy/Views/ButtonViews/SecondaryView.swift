@@ -28,7 +28,7 @@ struct SecondaryView: View {
             .overlay(
                 RoundedRectangle(cornerRadius: .infinity)
                     .stroke(lineWidth: 1.0)
-                    .foregroundColor(.black)
+                    .foregroundColor(.gray)
         )
         
     }
