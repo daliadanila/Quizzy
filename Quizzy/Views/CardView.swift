@@ -9,10 +9,14 @@
 import SwiftUI
 
 struct CardView: View {
+    
+    let card: Card
+    
     var body: some View {
         
         ZStack(alignment: .topLeading) {
             Rectangle().fill(Color.white).cornerRadius(8)
+                .shadow(radius: 50)
                 .padding()
                 .padding(.top, 30)
                 .padding(.bottom, 50)
@@ -108,7 +112,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView(card: Card.example)
             .background(Color.gray)
     }
 }

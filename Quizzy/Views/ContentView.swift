@@ -20,7 +20,6 @@ struct ContentView: View {
             if startedPlaying {
                 
                 CardContainerView()
-                 .accessibility(identifier: "cardContainerView")
             }
             else {
                 
