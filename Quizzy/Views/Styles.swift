@@ -22,28 +22,23 @@ public struct PrimaryButtonStyle: ButtonStyle {
     }
 }
 
-//public struct AnswerButtonStyle: ButtonStyle {
-//
-//    public func makeBody(configuration: Self.Configuration, isPressed: Bool) -> some View {
-//    configuration.label
-//            .accentColor(isPressed ? .yellow : .red)
-//            .padding()
-//            .background(isPressed ? Color.red : .yellow)
-//            .cornerRadius(4)
-//
-//    }
-//}
-
-
-struct RoundedOverlayStyle: ViewModifier {
+struct SelectedAnswerOverlayStyle: ViewModifier {
+    
+    @Binding var isPressed: Bool
+    
     func body(content: Content) -> some View {
         content
             
             .frame(width: 300, height: 50)
+            
+            
             .overlay(
                 RoundedRectangle(cornerRadius: .infinity)
                     .stroke(lineWidth: 1.0)
-                    .foregroundColor(.gray))
-        
+                    .foregroundColor(self.isPressed ? Color(FlatOrange()) : .gray)
+                
+        )
+        .background(self.isPressed ? Color(FlatOrange()) : Color.white)
+        .cornerRadius(.infinity)
     }
 }

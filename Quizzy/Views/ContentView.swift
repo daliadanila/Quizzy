@@ -75,12 +75,6 @@ public struct NavigationBarHider: ViewModifier {
     }
 }
 
-extension View {
-    public func hideNavigationBar() -> some View {
-        modifier(NavigationBarHider())
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
