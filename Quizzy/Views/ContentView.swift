@@ -15,33 +15,66 @@ struct ContentView: View {
     
     var body: some View {
         
-        ZStack {
+        NavigationView {
             
-            if startedPlaying {
+            TabView {
                 
-                CardContainerView()
-            }
-            else {
-                
-                StartScreenBackgroundView()
-                
-                VStack() {
+                ZStack {
                     
-                    Spacer()
+                    StartScreenBackgroundView()
                     
-                    Button(action: {
+                    VStack {
                         
-                        self.startedPlaying = true
+                        Spacer()
                         
-                    }) {
-                        PrimaryView(title: "START PLAYING")
-                            .padding(.bottom, 300)
-                            .accessibility(identifier: "startPlayingButton")
+                        NavigationLink(destination: CardContainerView().hideNavigationBar(), isActive: $startedPlaying) {
+                            
+                            Button(action: {
+                                
+                                self.startedPlaying = true
+                                
+                            }) {
+                                PrimaryView(title: "START PLAYING")
+                                    .padding(.bottom, 300)
+                                    .accessibility(identifier: "startPlayingButton")
+                            }
+                        }
+                        
                     }
                 }
+                    
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
                 
+                Text("The content of the second view")
+                    .tabItem {
+                        Image(systemName: "folder")
+                        Text("Settings")
+                }
             }
+            
+            
         }
+        
+    }
+}
+
+public struct NavigationBarHider: ViewModifier {
+    @State var isHidden: Bool = false
+    
+    public func body(content: Content) -> some View {
+        content
+            .navigationBarTitle("")
+            .navigationBarHidden(isHidden)
+            .onAppear { self.isHidden = true }
+    }
+}
+
+extension View {
+    public func hideNavigationBar() -> some View {
+        modifier(NavigationBarHider())
     }
 }
 
