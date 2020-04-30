@@ -20,8 +20,8 @@
 		2BA446E02459952700CB03D8 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446DF2459952700CB03D8 /* LottieView.swift */; };
 		2BA446E624599C4700CB03D8 /* Timer.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA446E524599C4700CB03D8 /* Timer.json */; };
 		2BA446E92459AA2800CB03D8 /* RectangleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446E82459AA2800CB03D8 /* RectangleImageView.swift */; };
-		2BD6AA0A245839A300358444 /* PrimaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA09245839A300358444 /* PrimaryView.swift */; };
-		2BD6AA0C24584D2A00358444 /* SecondaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0B24584D2A00358444 /* SecondaryView.swift */; };
+		2BA446EC245AFB5300CB03D8 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446EB245AFB5300CB03D8 /* Styles.swift */; };
+		2BA446EE245AFD9600CB03D8 /* Text+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446ED245AFD9600CB03D8 /* Text+Style.swift */; };
 		2BD6AA0E2458828B00358444 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0D2458828B00358444 /* CardView.swift */; };
 		2BD6AA10245889E000358444 /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0F245889E000358444 /* CardContainerView.swift */; };
 		2BD6AA122458901B00358444 /* StartScreenBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA112458901B00358444 /* StartScreenBackgroundView.swift */; };
@@ -68,8 +68,8 @@
 		2BA446DF2459952700CB03D8 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		2BA446E524599C4700CB03D8 /* Timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timer.json; sourceTree = "<group>"; };
 		2BA446E82459AA2800CB03D8 /* RectangleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleImageView.swift; sourceTree = "<group>"; };
-		2BD6AA09245839A300358444 /* PrimaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryView.swift; sourceTree = "<group>"; };
-		2BD6AA0B24584D2A00358444 /* SecondaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryView.swift; sourceTree = "<group>"; };
+		2BA446EB245AFB5300CB03D8 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		2BA446ED245AFD9600CB03D8 /* Text+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Style.swift"; sourceTree = "<group>"; };
 		2BD6AA0D2458828B00358444 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		2BD6AA0F245889E000358444 /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
 		2BD6AA112458901B00358444 /* StartScreenBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenBackgroundView.swift; sourceTree = "<group>"; };
@@ -202,11 +202,11 @@
 			children = (
 				2B63A4E2245728AD0092AF67 /* ContentView.swift */,
 				2BA446DF2459952700CB03D8 /* LottieView.swift */,
-				2BD6AA09245839A300358444 /* PrimaryView.swift */,
-				2BD6AA0B24584D2A00358444 /* SecondaryView.swift */,
 				2BD6AA0D2458828B00358444 /* CardView.swift */,
 				2BA446E82459AA2800CB03D8 /* RectangleImageView.swift */,
 				2BD6AA142458912400358444 /* Containers */,
+				2BA446ED245AFD9600CB03D8 /* Text+Style.swift */,
+				2BA446EB245AFB5300CB03D8 /* Styles.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -494,16 +494,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA446EC245AFB5300CB03D8 /* Styles.swift in Sources */,
 				2B63A4DF245728AD0092AF67 /* AppDelegate.swift in Sources */,
+				2BA446EE245AFD9600CB03D8 /* Text+Style.swift in Sources */,
 				2B63A4E1245728AD0092AF67 /* SceneDelegate.swift in Sources */,
 				2BA446E02459952700CB03D8 /* LottieView.swift in Sources */,
-				2BD6AA0C24584D2A00358444 /* SecondaryView.swift in Sources */,
 				2BA446E92459AA2800CB03D8 /* RectangleImageView.swift in Sources */,
 				2BD6AA122458901B00358444 /* StartScreenBackgroundView.swift in Sources */,
 				2B63A4E3245728AD0092AF67 /* ContentView.swift in Sources */,
 				2BD6AA0E2458828B00358444 /* CardView.swift in Sources */,
 				2BD6AA10245889E000358444 /* CardContainerView.swift in Sources */,
-				2BD6AA0A245839A300358444 /* PrimaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

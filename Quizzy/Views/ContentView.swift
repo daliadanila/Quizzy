@@ -34,10 +34,13 @@ struct ContentView: View {
                                 self.startedPlaying = true
                                 
                             }) {
-                                PrimaryView(title: "START PLAYING")
-                                    .padding(.bottom, 300)
+                                
+                                Text("START PLAYING")
+                                    .style(.h7)
                                     .accessibility(identifier: "startPlayingButton")
                             }
+                            .padding(.bottom, 300)
+                            .buttonStyle(PrimaryButtonStyle())
                         }
                         
                     }

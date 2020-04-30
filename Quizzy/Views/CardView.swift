@@ -59,8 +59,11 @@ struct CardView: View {
                         
                     }) {
                         
-                        SecondaryView(title: "First answer")
+                        Text("First answer")
+                            .style(.h6)
+                            .customStyle(RoundedOverlayStyle())
                             .accessibility(identifier: "firstAnswerButton")
+                        
                     }
                     .padding(.top, 10)
                     
@@ -68,7 +71,9 @@ struct CardView: View {
                         
                         
                     }) {
-                        SecondaryView(title: "Second answer")
+                        Text("Second answer")
+                            .style(.h6)
+                            .customStyle(RoundedOverlayStyle())
                             .accessibility(identifier: "secondAnswerButton")
                     }
                     .padding(.top, 10)
@@ -79,7 +84,9 @@ struct CardView: View {
                         
                     }) {
                         
-                        SecondaryView(title: "Third answer")
+                        Text("Third answer")
+                            .style(.h6)
+                            .customStyle(RoundedOverlayStyle())
                             .accessibility(identifier: "thirdAnswerButton")
                     }
                     .padding(.top, 10)
@@ -90,7 +97,9 @@ struct CardView: View {
                         
                     }) {
                         
-                        SecondaryView(title: "Forth answer")
+                        Text("Forth answer")
+                            .style(.h6)
+                            .customStyle(RoundedOverlayStyle())
                             .accessibility(identifier: "forthAnswerButton")
                     }
                     .padding(.top, 10)
