@@ -15,8 +15,12 @@ struct CardView: View {
     @State private var thirdPressed: Bool = false
     @State private var forthPressed: Bool = false
     
+    @State private var firstCorrect: Bool = false
+    @State private var secondCorrect: Bool = false
+    @State private var thirdCorrect: Bool = false
+    @State private var forthCorrect: Bool = false
+    
     @State private var answerSelected: Bool = false
-
     
     var body: some View {
         
@@ -59,7 +63,7 @@ struct CardView: View {
                 }
                 
                 VStack {
-                    
+                
                     Spacer()
                     
                     Button(action: {
@@ -72,12 +76,17 @@ struct CardView: View {
                         
                         self.answerSelected = true
                         
+                        delayWithSeconds(1) {
+                            self.secondCorrect = true
+                        }
+                        
+                        
                     }, label: {
                         VStack {
                             Text("First answer")
                                 .style(.h6)
                                 .accessibility(identifier: "firstAnswerButton")
-                        }.overlayStyle(isPressed: $firstPressed)
+                        }.overlayStyle(isPressed: $firstPressed, isCorrect: $firstCorrect)
                     })
                         .padding(.top, 10)
                     
@@ -90,12 +99,16 @@ struct CardView: View {
                         self.forthPressed = false
                         
                         self.answerSelected = true
+                        
+                        delayWithSeconds(1) {
+                            self.secondCorrect = true
+                        }
                     }, label: {
                         VStack {
                             Text("Second answer")
                                 .style(.h6)
                                 .accessibility(identifier: "secondAnswerButton")
-                        }.overlayStyle(isPressed: $secondPressed)
+                        }.overlayStyle(isPressed: $secondPressed, isCorrect: $secondCorrect)
                     })
                         .padding(.top, 10)
                     
@@ -109,12 +122,16 @@ struct CardView: View {
                         self.forthPressed = false
                         
                         self.answerSelected = true
+                        
+                        delayWithSeconds(1) {
+                            self.secondCorrect = true
+                        }
                     }, label: {
                         VStack {
                             Text("Third answer")
                                 .style(.h6)
                                 .accessibility(identifier: "thirdAnswerButton")
-                        }.overlayStyle(isPressed: $thirdPressed)
+                        }.overlayStyle(isPressed: $thirdPressed, isCorrect: $thirdCorrect)
                     })
                         .padding(.top, 10)
                     
@@ -128,12 +145,16 @@ struct CardView: View {
                         self.thirdPressed = false
                         
                         self.answerSelected = true
+                        
+                        delayWithSeconds(1) {
+                            self.secondCorrect = true
+                        }
                     }, label: {
                         VStack {
                             Text("Forth answer")
                                 .style(.h6)
                                 .accessibility(identifier: "forthAnswerButton")
-                        }.overlayStyle(isPressed: $forthPressed)
+                        }.overlayStyle(isPressed: $forthPressed, isCorrect: $forthCorrect)
                     })
                         .padding(.top, 10)
                     

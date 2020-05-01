@@ -26,6 +26,8 @@ struct SelectedAnswerOverlayStyle: ViewModifier {
     
     @Binding var isPressed: Bool
     
+    @Binding var isCorrect: Bool
+    
     func body(content: Content) -> some View {
         content
             
@@ -33,10 +35,11 @@ struct SelectedAnswerOverlayStyle: ViewModifier {
             .overlay(
                 RoundedRectangle(cornerRadius: .infinity)
                     .stroke(lineWidth: 1.0)
-                    .foregroundColor(self.isPressed ? Color(FlatYellowDark()) : Color(FlatGray()))
+                    .foregroundColor(self.isCorrect ? Color(FlatGreenDark()) : self.isPressed ? Color(FlatYellowDark()) :  Color(FlatGray()))
                 
         )
-        .background(self.isPressed ? Color(FlatYellowDark()) : Color.white)
+        .background(self.isCorrect ? Color(FlatGreenDark()) : self.isPressed ? Color(FlatYellowDark()) : Color.white)
         .cornerRadius(.infinity)
+        .animation(.spring())
     }
 }

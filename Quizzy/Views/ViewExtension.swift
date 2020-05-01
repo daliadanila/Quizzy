@@ -13,7 +13,7 @@ extension View {
         modifier(NavigationBarHider())
     }
     
-    func overlayStyle(isPressed: Binding<Bool>) -> some View {
-        self.modifier(SelectedAnswerOverlayStyle(isPressed: isPressed))
+    func overlayStyle(isPressed: Binding<Bool>, isCorrect: Binding<Bool>) -> some View {
+        self.modifier(SelectedAnswerOverlayStyle(isPressed: isPressed, isCorrect: isCorrect))
     }
 }

@@ -23,6 +23,7 @@
 		2BA446EC245AFB5300CB03D8 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446EB245AFB5300CB03D8 /* Styles.swift */; };
 		2BA446EE245AFD9600CB03D8 /* Text+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446ED245AFD9600CB03D8 /* Text+Style.swift */; };
 		2BA446F0245B249A00CB03D8 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446EF245B249A00CB03D8 /* ViewExtension.swift */; };
+		2BA446F2245C81F000CB03D8 /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446F1245C81F000CB03D8 /* TimeUtils.swift */; };
 		2BD6AA0E2458828B00358444 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0D2458828B00358444 /* CardView.swift */; };
 		2BD6AA10245889E000358444 /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA0F245889E000358444 /* CardContainerView.swift */; };
 		2BD6AA122458901B00358444 /* StartScreenBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6AA112458901B00358444 /* StartScreenBackgroundView.swift */; };
@@ -72,6 +73,7 @@
 		2BA446EB245AFB5300CB03D8 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		2BA446ED245AFD9600CB03D8 /* Text+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Style.swift"; sourceTree = "<group>"; };
 		2BA446EF245B249A00CB03D8 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		2BA446F1245C81F000CB03D8 /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
 		2BD6AA0D2458828B00358444 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		2BD6AA0F245889E000358444 /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
 		2BD6AA112458901B00358444 /* StartScreenBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenBackgroundView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				2B63A4E9245728B10092AF67 /* LaunchScreen.storyboard */,
 				2B63A4EC245728B10092AF67 /* Info.plist */,
 				2B63A4E6245728B10092AF67 /* Preview Content */,
+				2BA446F1245C81F000CB03D8 /* TimeUtils.swift */,
 			);
 			path = Quizzy;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				2B63A4E1245728AD0092AF67 /* SceneDelegate.swift in Sources */,
 				2BA446E02459952700CB03D8 /* LottieView.swift in Sources */,
 				2BA446E92459AA2800CB03D8 /* RectangleImageView.swift in Sources */,
+				2BA446F2245C81F000CB03D8 /* TimeUtils.swift in Sources */,
 				2BA446F0245B249A00CB03D8 /* ViewExtension.swift in Sources */,
 				2BD6AA122458901B00358444 /* StartScreenBackgroundView.swift in Sources */,
 				2B63A4E3245728AD0092AF67 /* ContentView.swift in Sources */,
