@@ -30,15 +30,13 @@ struct SelectedAnswerOverlayStyle: ViewModifier {
         content
             
             .frame(width: 300, height: 50)
-            
-            
             .overlay(
                 RoundedRectangle(cornerRadius: .infinity)
                     .stroke(lineWidth: 1.0)
-                    .foregroundColor(self.isPressed ? Color(FlatOrange()) : .gray)
+                    .foregroundColor(self.isPressed ? Color(FlatYellowDark()) : Color(FlatGray()))
                 
         )
-        .background(self.isPressed ? Color(FlatOrange()) : Color.white)
+        .background(self.isPressed ? Color(FlatYellowDark()) : Color.white)
         .cornerRadius(.infinity)
     }
 }

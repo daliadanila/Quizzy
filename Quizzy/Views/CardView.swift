@@ -15,6 +15,9 @@ struct CardView: View {
     @State private var thirdPressed: Bool = false
     @State private var forthPressed: Bool = false
     
+    @State private var answerSelected: Bool = false
+
+    
     var body: some View {
         
         ZStack(alignment: .topLeading) {
@@ -40,8 +43,9 @@ struct CardView: View {
                     .padding(.leading, 50)
                     .padding(.trailing, 50)
                     
-                    LottieView(filename: "Timer")
+                    LottieView(filename: "Timer", stop: $answerSelected )
                         .frame(width: 70)
+                    
                     
                     Text("Category")
                         .font(.caption)
@@ -66,6 +70,8 @@ struct CardView: View {
                         self.thirdPressed = false
                         self.forthPressed = false
                         
+                        self.answerSelected = true
+                        
                     }, label: {
                         VStack {
                             Text("First answer")
@@ -82,6 +88,8 @@ struct CardView: View {
                         self.firstPressed = false
                         self.thirdPressed = false
                         self.forthPressed = false
+                        
+                        self.answerSelected = true
                     }, label: {
                         VStack {
                             Text("Second answer")
@@ -99,6 +107,8 @@ struct CardView: View {
                         self.firstPressed = false
                         self.secondPressed = false
                         self.forthPressed = false
+                        
+                        self.answerSelected = true
                     }, label: {
                         VStack {
                             Text("Third answer")
@@ -116,6 +126,8 @@ struct CardView: View {
                         self.firstPressed = false
                         self.secondPressed = false
                         self.thirdPressed = false
+                        
+                        self.answerSelected = true
                     }, label: {
                         VStack {
                             Text("Forth answer")

@@ -10,26 +10,36 @@ import SwiftUI
 import Lottie
 
 struct LottieView: UIViewRepresentable {
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
     
-    let animationView = AnimationView()
     var filename = "LottieLogo2"
+    @Binding var stop: Bool
+    
+    var animationView = AnimationView()
+    
+    class Coordinator: NSObject {
+        var parent: LottieView
+        
+        init(_ animationView: LottieView) {
+            self.parent = animationView
+            super.init()
+        }
+    }
     
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
-        
         let view = UIView()
         
-        let animation = Animation.named(filename)
-        animationView.animation = animation
+        animationView.animation = Animation.named(filename)
         animationView.contentMode = .scaleAspectFit
-        animationView.play()
         
         animationView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(animationView)
         
         NSLayoutConstraint.activate([
-        
-            animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            animationView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            animationView.heightAnchor.constraint(equalTo: view.heightAnchor)
         ])
         
         return view
@@ -37,6 +47,13 @@ struct LottieView: UIViewRepresentable {
     
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
         
+        if stop == false {
+        
+            animationView.play()
+        }
+        else {
+            
+            animationView.pause()
+        }
     }
-    
 }
