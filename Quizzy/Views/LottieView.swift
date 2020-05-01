@@ -33,6 +33,7 @@ struct LottieView: UIViewRepresentable {
         
         animationView.animation = Animation.named(filename)
         animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .playOnce
         
         animationView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(animationView)
@@ -49,7 +50,9 @@ struct LottieView: UIViewRepresentable {
         
         if stop == false {
         
-            animationView.play()
+            animationView.play { (false) in
+                self.animationView.removeFromSuperview()
+            }
         }
         else {
             

@@ -38,8 +38,8 @@ struct SelectedAnswerOverlayStyle: ViewModifier {
                     .foregroundColor(self.isCorrect ? Color(FlatGreenDark()) : self.isPressed ? Color(FlatYellowDark()) :  Color(FlatGray()))
                 
         )
-        .background(self.isCorrect ? Color(FlatGreenDark()) : self.isPressed ? Color(FlatYellowDark()) : Color.white)
-        .cornerRadius(.infinity)
-        .animation(.spring())
+            .background(self.isCorrect ? Color(FlatGreenDark()) : self.isPressed ? Color(FlatYellowDark()) : Color.white)
+            .cornerRadius(.infinity)
+            .animation(.spring())
     }
 }
