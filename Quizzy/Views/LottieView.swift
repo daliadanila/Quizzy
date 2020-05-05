@@ -49,9 +49,14 @@ struct LottieView: UIViewRepresentable {
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
         
         if stop == false {
-        
+            
             animationView.play { (false) in
-                self.animationView.alpha = 0
+                
+                if self.animationView.currentProgress == 1 {
+                    
+                    self.animationView.alpha = 0
+                    
+                }
             }
         }
         else {
