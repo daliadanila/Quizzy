@@ -51,7 +51,7 @@ struct LottieView: UIViewRepresentable {
         if stop == false {
         
             animationView.play { (false) in
-                self.animationView.removeFromSuperview()
+                self.animationView.alpha = 0
             }
         }
         else {

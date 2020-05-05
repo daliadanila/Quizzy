@@ -49,6 +49,14 @@ struct CardView: View {
                     
                     LottieView(filename: "Timer", stop: $answerSelected )
                         .frame(width: 70)
+                        .onAppear {
+                            
+                            delayWithSeconds(10) {
+                                self.secondPressed = true
+                                self.secondCorrect = true
+                                
+                            }
+                    }
                     
                     
                     Text("Category")
