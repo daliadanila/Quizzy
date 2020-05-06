@@ -15,11 +15,22 @@ extension Text {
     }
     
     enum Style {
-        case h6, h7
+        case h2, h4, h6, h7, h8
     }
     
     func style(_ style: Style) -> Text {
         switch style {
+            
+        case .h2:
+            return
+                font(.title)
+                    .fontWeight(.bold)
+            
+        case .h4:
+            return
+                font(.body)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
             
         case .h6:
             return
@@ -27,6 +38,11 @@ extension Text {
                     .foregroundColor(.black)
             
         case .h7:
+            return
+                font(.caption)
+                    .fontWeight(.light)
+        
+        case .h8:
             return
                 font(.footnote)
                     .fontWeight(.bold)

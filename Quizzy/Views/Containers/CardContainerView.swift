@@ -53,17 +53,12 @@ struct CardContainerView: View {
                 Spacer()
                 
                 Text("0 Points")
-                    .font(.body)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
+                    .style(.h4)
                 
                 Spacer()
                 
                 Text("3 Lives")
-                    .font(.body)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.leading)
+                    .style(.h4)
                     .padding(.trailing, 15)
                 
                 

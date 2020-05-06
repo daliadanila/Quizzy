@@ -34,8 +34,7 @@ struct CardView: View {
         ZStack(alignment: .topLeading) {
             Rectangle().fill(Color.white).cornerRadius(8)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color(FlatGray()), lineWidth: 4)
+                    RoundedRectangle(cornerRadius: 8).stroke(Color(FlatGray()), lineWidth: 4)
                 )
                 .padding()
                 .padding(.top, 30)
@@ -48,9 +47,7 @@ struct CardView: View {
                     HStack {
                         Spacer()
                         
-                        Text("Question \(self.currentIndex)/\(self.totalNumber)")
-                            .font(.callout)
-                            .fontWeight(.regular)
+                        Text("Question \(self.currentIndex)/\(self.totalNumber)").style(.h6)
                         
                         Spacer()
                         
@@ -59,19 +56,13 @@ struct CardView: View {
                     .padding(.leading, 50)
                     .padding(.trailing, 50)
                     
-                    LottieView(filename: "Timer", stop: $answerSelected )
-                        .frame(width: 70)
+                    LottieView(filename: "Timer", stop: $answerSelected ).frame(width: 70)
                     
                     
-                    Text("Category")
-                        .font(.caption)
-                        .fontWeight(.light)
+                    Text("Category").style(.h7)
                     
-                    Text("Question")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    
+                    Text("Question").style(.h2)
+ 
                 }
                 
                 VStack {

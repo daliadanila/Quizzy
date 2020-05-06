@@ -36,7 +36,7 @@ struct ContentView: View {
                             }) {
                                 
                                 Text("START PLAYING")
-                                    .style(.h7)
+                                    .style(.h8)
                                     .accessibility(identifier: "startPlayingButton")
                             }
                             .padding(.bottom, 300)
