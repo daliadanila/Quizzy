@@ -35,7 +35,7 @@ struct CardView: View {
             Rectangle().fill(Color.white).cornerRadius(8)
                 .overlay(
                     RoundedRectangle(cornerRadius: 8).stroke(Color(FlatGray()), lineWidth: 4)
-                )
+            )
                 .padding()
                 .padding(.top, 30)
                 .padding(.bottom, 50)
@@ -56,17 +56,16 @@ struct CardView: View {
                     .padding(.leading, 50)
                     .padding(.trailing, 50)
                     
-                    LottieView(filename: "Timer", stop: $answerSelected ).frame(width: 70)
-                    
+                    LottieView(filename: "Timer", stop: $answerSelected).frame(width: 70)
                     
                     Text("Category").style(.h7)
                     
                     Text("Question").style(.h2)
- 
+                    
                 }
                 
                 VStack {
-                
+                    
                     Spacer()
                     
                     Button(action: {
@@ -79,17 +78,7 @@ struct CardView: View {
                         
                         self.answerSelected = true
                         
-                        delayWithSeconds(1) {
-                            self.secondCorrect = true
-                            
-                        }
-                        
-                        delayWithSeconds(2) {
-                            
-                            withAnimation(.linear(duration: 1.0)){
-                                self.nextIndex += 1
-                            }
-                        }
+                        self.goToNextQuestion(delaySecs: 1)
                         
                         
                     }, label: {
@@ -111,17 +100,7 @@ struct CardView: View {
                         
                         self.answerSelected = true
                         
-                        delayWithSeconds(1) {
-                            self.secondCorrect = true
-                            
-                        }
-                        
-                        delayWithSeconds(2) {
-                            
-                            withAnimation(.linear(duration: 1.0)){
-                                self.nextIndex += 1
-                            }
-                        }
+                        self.goToNextQuestion(delaySecs: 1)
                         
                     }, label: {
                         VStack {
@@ -143,17 +122,7 @@ struct CardView: View {
                         
                         self.answerSelected = true
                         
-                        delayWithSeconds(1) {
-                            self.secondCorrect = true
-                            
-                        }
-                        
-                        delayWithSeconds(2) {
-                            
-                            withAnimation(.linear(duration: 1.0)){
-                                self.nextIndex += 1
-                            }
-                        }
+                        self.goToNextQuestion(delaySecs: 1)
                         
                     }, label: {
                         VStack {
@@ -175,17 +144,8 @@ struct CardView: View {
                         
                         self.answerSelected = true
                         
-                        delayWithSeconds(1) {
-                            self.secondCorrect = true
-                            
-                        }
+                        self.goToNextQuestion(delaySecs: 1)
                         
-                        delayWithSeconds(2) {
-                            
-                            withAnimation(.linear(duration: 1.0)){
-                                self.nextIndex += 1
-                            }
-                        }
                     }, label: {
                         VStack {
                             Text("Forth answer")
@@ -199,23 +159,33 @@ struct CardView: View {
                 }
             }
         }
-        
-        .onAppear {
-                
-                delayWithSeconds(10) {
-                    
-                    self.secondCorrect = true
-            }
             
-            delayWithSeconds(11) {
+        .onAppear {
+
+            self.goToNextQuestion(delaySecs: 10)
+        }
+    
+    }
+    
+    func goToNextQuestion(delaySecs: Double) {
+        
+        print("Current index \(self.currentIndex)")
+        
+        delayWithSeconds(delaySecs) {
+            
+            self.secondCorrect = true
+            
+            delayWithSeconds(1) {
                 
                 withAnimation(.linear(duration: 1.0)) {
-                    if self.currentIndex + 1 != self.nextIndex {
                     
+                    if self.currentIndex == self.nextIndex {
+                        
                         self.nextIndex += 1
                     }
                 }
             }
+            
         }
     }
 }

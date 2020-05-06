@@ -19,14 +19,19 @@ struct CardContainerView: View {
         
         func makeQuestionsStack() -> some View  {
             
-            ZStack(alignment:.leading){
-                ZStack(alignment:.top){
-                    ForEach(1...10, id:\.self){i in
-                        ZStack(){
-                            if self.questionCount == i{
-                                CardView(currentIndex: i, totalNumber: 10, nextIndex: self.$questionCount)
-                                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                            }
+            ZStack(alignment:.leading)
+            {
+                ZStack(alignment:.top)
+                {
+                    ForEach(1...10, id:\.self)
+                    { i in
+                        ZStack()
+                            {
+                                if self.questionCount == i
+                                {
+                                    CardView(currentIndex: i, totalNumber: 10, nextIndex: self.$questionCount)
+                                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                                }
                         }
                         
                     }
@@ -52,16 +57,11 @@ struct CardContainerView: View {
                 }
                 Spacer()
                 
-                Text("0 Points")
-                    .style(.h4)
+                Text("0 Points").style(.h4)
                 
                 Spacer()
                 
-                Text("3 Lives")
-                    .style(.h4)
-                    .padding(.trailing, 15)
-                
-                
+                Text("3 Lives").style(.h4).padding(.trailing, 15)
             }
         }
         
