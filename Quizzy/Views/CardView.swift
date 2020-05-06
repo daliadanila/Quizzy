@@ -23,6 +23,12 @@ struct CardView: View {
     
     @State private var answerSelected: Bool = false
     
+    var currentIndex: Int
+    
+    var totalNumber: Int
+    
+    @Binding var nextIndex: Int
+    
     var body: some View {
         
         ZStack(alignment: .topLeading) {
@@ -42,7 +48,7 @@ struct CardView: View {
                     HStack {
                         Spacer()
                         
-                        Text("Question 1/10")
+                        Text("Question \(self.currentIndex)/\(self.totalNumber)")
                             .font(.callout)
                             .fontWeight(.regular)
                         
@@ -84,6 +90,14 @@ struct CardView: View {
                         
                         delayWithSeconds(1) {
                             self.secondCorrect = true
+                            
+                        }
+                        
+                        delayWithSeconds(2) {
+                            
+                            withAnimation(.linear(duration: 1.0)){
+                                self.nextIndex += 1
+                            }
                         }
                         
                         
@@ -108,7 +122,16 @@ struct CardView: View {
                         
                         delayWithSeconds(1) {
                             self.secondCorrect = true
+                            
                         }
+                        
+                        delayWithSeconds(2) {
+                            
+                            withAnimation(.linear(duration: 1.0)){
+                                self.nextIndex += 1
+                            }
+                        }
+                        
                     }, label: {
                         VStack {
                             Text("Second answer")
@@ -131,7 +154,16 @@ struct CardView: View {
                         
                         delayWithSeconds(1) {
                             self.secondCorrect = true
+                            
                         }
+                        
+                        delayWithSeconds(2) {
+                            
+                            withAnimation(.linear(duration: 1.0)){
+                                self.nextIndex += 1
+                            }
+                        }
+                        
                     }, label: {
                         VStack {
                             Text("Third answer")
@@ -154,6 +186,14 @@ struct CardView: View {
                         
                         delayWithSeconds(1) {
                             self.secondCorrect = true
+                            
+                        }
+                        
+                        delayWithSeconds(2) {
+                            
+                            withAnimation(.linear(duration: 1.0)){
+                                self.nextIndex += 1
+                            }
                         }
                     }, label: {
                         VStack {
@@ -172,16 +212,26 @@ struct CardView: View {
         .onAppear {
                 
                 delayWithSeconds(10) {
-                    self.secondCorrect = true
                     
+                    self.secondCorrect = true
+            }
+            
+            delayWithSeconds(11) {
+                
+                withAnimation(.linear(duration: 1.0)) {
+                    if self.currentIndex + 1 != self.nextIndex {
+                    
+                        self.nextIndex += 1
+                    }
                 }
+            }
         }
     }
 }
-
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView()
-            .background(Color.gray)
-    }
-}
+//
+//struct CardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardView(questionIndex: 1)
+//            .background(Color.gray)
+//    }
+//}

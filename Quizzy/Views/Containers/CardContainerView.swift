@@ -13,7 +13,7 @@ struct CardContainerView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @State var questionCount = 0
+    @State var questionCount = 1
     
     var body: some View {
         
@@ -60,20 +60,11 @@ struct CardContainerView: View {
                 
                 ZStack(alignment:.leading){
                     ZStack(alignment:.top){
-                        ForEach(0...3, id:\.self){i in
+                        ForEach(1...4, id:\.self){i in
                             ZStack(){
                                 if self.questionCount == i{
-                                    CardView()
+                                    CardView(currentIndex: i, totalNumber: 4, nextIndex: self.$questionCount)
                                         .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                                    .onAppear {
-                                        
-                                        delayWithSeconds(11) {
-                                            
-                                            withAnimation(.linear(duration: 1.0)){
-                                                self.questionCount += 1
-                                            }
-                                        }
-                                    }
                                 }
                             }
                             
