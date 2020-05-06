@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import ChameleonFramework
 
 struct CardView: View {
     
@@ -26,9 +27,14 @@ struct CardView: View {
         
         ZStack(alignment: .topLeading) {
             Rectangle().fill(Color.white).cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color(FlatGray()), lineWidth: 4)
+                )
                 .padding()
                 .padding(.top, 30)
                 .padding(.bottom, 50)
+            
             
             VStack {
                 
