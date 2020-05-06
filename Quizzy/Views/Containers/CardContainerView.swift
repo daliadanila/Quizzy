@@ -65,7 +65,7 @@ struct CardContainerView: View {
             }
         }
         
-        func makeContainer() -> some View {
+        func makeCardContainerView() -> some View {
             
             ZStack {
                 
@@ -83,7 +83,7 @@ struct CardContainerView: View {
             }
         }
         
-        return makeContainer()
+        return makeCardContainerView()
         
     }
 }
