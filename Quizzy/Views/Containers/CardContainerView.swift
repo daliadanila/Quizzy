@@ -17,65 +17,78 @@ struct CardContainerView: View {
     
     var body: some View {
         
-        ZStack {
+        func makeQuestionsStack() -> some View  {
             
-            LinearGradient(gradient: Gradient(colors: [Color(FlatMagenta()), Color(FlatPlumDark())]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                HStack {
-                    
-                    Button(action: {
-                        
-                        self.presentationMode.wrappedValue.dismiss()
-                        
-                    }) {
-                        
-                        RectangleImageView(icon: "xmark")
-                            .padding(.leading, 15)
-                            .padding(.top, 15)
-                            .accessibility(identifier: "closeButton")
-                    }
-                    Spacer()
-                    
-                    Text("0 Points")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                    
-                    Spacer()
-                    
-                    Text("3 Lives")
-                        .font(.body)
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.leading)
-                        .padding(.trailing, 15)
-                    
-                    
-                }
-                .padding(.bottom, -25)
-                
-                
-                
-                ZStack(alignment:.leading){
-                    ZStack(alignment:.top){
-                        ForEach(1...4, id:\.self){i in
-                            ZStack(){
-                                if self.questionCount == i{
-                                    CardView(currentIndex: i, totalNumber: 4, nextIndex: self.$questionCount)
-                                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                                }
+            ZStack(alignment:.leading){
+                ZStack(alignment:.top){
+                    ForEach(1...10, id:\.self){i in
+                        ZStack(){
+                            if self.questionCount == i{
+                                CardView(currentIndex: i, totalNumber: 10, nextIndex: self.$questionCount)
+                                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                             }
-                            
                         }
+                        
                     }
-                    
                 }
                 
             }
-            .edgesIgnoringSafeArea(.bottom)
         }
+        
+        func makeTopHStack() -> some View {
+            
+            HStack {
+                
+                Button(action: {
+                    
+                    self.presentationMode.wrappedValue.dismiss()
+                    
+                }) {
+                    
+                    RectangleImageView(icon: "xmark")
+                        .padding(.leading, 15)
+                        .padding(.top, 15)
+                        .accessibility(identifier: "closeButton")
+                }
+                Spacer()
+                
+                Text("0 Points")
+                    .font(.body)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
+                
+                Spacer()
+                
+                Text("3 Lives")
+                    .font(.body)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.leading)
+                    .padding(.trailing, 15)
+                
+                
+            }
+        }
+        
+        func makeContainer() -> some View {
+            
+            ZStack {
+                
+                LinearGradient(gradient: Gradient(colors: [Color(FlatMagenta()), Color(FlatPlumDark())]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    
+                    makeTopHStack().padding(.bottom, -25)
+                    
+                    makeQuestionsStack()
+                    
+                }.edgesIgnoringSafeArea(.bottom)
+                
+            }
+        }
+        
+        return makeContainer()
         
     }
 }
