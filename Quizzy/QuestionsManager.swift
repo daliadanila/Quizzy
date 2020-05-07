@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 class QuestionsManager {
 
@@ -29,47 +30,39 @@ class QuestionsManager {
 
 class FileHandler {
 
-    func readData(filename: String) throws -> [String: Dictionary<String, AnyObject>] {
+    func readData(filename: String) throws -> [String: QuestionInfo] {
         
-        let plistPath = try retrievePlistPath(filename: filename)
+        let plistURL = try retrievePlistURL(filename: filename)
         
-        let plistXML = try retrieveXMLContent(path: plistPath)
+        let plistData = try retrievePlistData(plistURL: plistURL)
         
-        let plistData = try retrievePropertyList(xmlData: plistXML)
+        let plistContent = try retrievePlistContent(plistData: plistData)
         
-        return plistData
+        return plistContent
     }
     
-    func retrievePlistPath(filename: String) throws -> String {
+    func retrievePlistURL(filename: String) throws -> URL {
         
-        guard let plistPath = Bundle.main.path(forResource: filename, ofType: "plist") else {
+        guard let plistURL = Bundle.main.url(forResource: filename, withExtension: "plist") else {
             
             throw ParsingError.fileNotFound
         }
         
-        return plistPath
+        return plistURL
     }
     
-    func retrieveXMLContent(path: String) throws -> Data {
+    func retrievePlistData(plistURL: URL) throws -> Data {
         
-        guard let plistXML = FileManager.default.contents(atPath: path) else {
-            
-            throw ParsingError.fileNotFound
-        }
-        
-        return plistXML
-    }
-    
-    func retrievePropertyList(xmlData: Data) throws -> [String: Dictionary<String, AnyObject>] {
-        
-        var propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml
-        
-        guard let plistData = try? (PropertyListSerialization.propertyList(from: xmlData, options: .mutableContainersAndLeaves, format: &propertyListFormat) as! [String: Dictionary<String, AnyObject>]) else
-        {
-            throw ParsingError.serializationError
-        }
+        let plistData = try Data(contentsOf: plistURL)
         
         return plistData
+    }
+    
+    func retrievePlistContent(plistData: Data) throws -> [String: QuestionInfo] {
+               
+        let decoder = PropertyListDecoder()
+               
+        return try decoder.decode([String: QuestionInfo].self, from: plistData)
     }
 }
 
@@ -78,4 +71,15 @@ enum ParsingError: Error {
     case fileNotFound
     
     case serializationError
+}
+
+struct QuestionInfo: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case category, question, answers, correct
+    }
+    
+    let category: String
+    let question: String
+    let answers: [String]
+    let correct: Int
 }

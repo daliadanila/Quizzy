@@ -4,50 +4,50 @@
 <dict>
 	<key>0</key>
 	<dict>
-		<key>Category</key>
+		<key>category</key>
 		<string>Music</string>
-		<key>Question</key>
+		<key>question</key>
 		<string>Choose second option</string>
-		<key>Answers</key>
+		<key>answers</key>
 		<array>
 			<string>Option 1</string>
 			<string>Option 2</string>
 			<string>Option 3</string>
 			<string>Option 4</string>
 		</array>
-		<key>Correct answer index</key>
+		<key>correct</key>
 		<integer>1</integer>
 	</dict>
 	<key>1</key>
 	<dict>
-		<key>Category</key>
+		<key>category</key>
 		<string>General Knowledge</string>
-		<key>Question</key>
+		<key>question</key>
 		<string>Choose third option</string>
-		<key>Answers</key>
+		<key>answers</key>
 		<array>
 			<string>Option 1</string>
 			<string>Option 2</string>
 			<string>Option 3</string>
 			<string>Option 4</string>
 		</array>
-		<key>Correct answer index</key>
+		<key>correct</key>
 		<integer>2</integer>
 	</dict>
 	<key>2</key>
 	<dict>
-		<key>Category</key>
+		<key>category</key>
 		<string>Travel</string>
-		<key>Question</key>
+		<key>question</key>
 		<string>Choose first option</string>
-		<key>Answers</key>
+		<key>answers</key>
 		<array>
 			<string>Option 1</string>
 			<string>Option 2</string>
 			<string>Option 3</string>
 			<string>Option 4</string>
 		</array>
-		<key>Correct answer index</key>
+		<key>correct</key>
 		<integer>0</integer>
 	</dict>
 </dict>

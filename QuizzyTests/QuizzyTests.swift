@@ -35,57 +35,51 @@ class QuizzyTests: XCTestCase {
         
         let fileHandler = FileHandler()
         
-        let data = try fileHandler.readData(filename: "Questions") as [String: Dictionary<String, AnyObject>]
+        let data = try fileHandler.readData(filename: "Questions") as [String: QuestionInfo]
     
-        XCTAssertNotNil(data.keys)
+        XCTAssertNotNil(data)
+        
+        XCTAssertNotNil(data.values)
         
         for question in data {
             
             let questionDict = question.value
             
-            let allKeys = questionDict.keys
+            XCTAssertTrue(!questionDict.category.isEmpty)
             
-            XCTAssertTrue(allKeys.contains("Category"))
+            XCTAssertTrue(!questionDict.question.isEmpty)
             
-            XCTAssertTrue(allKeys.contains("Answers"))
+            XCTAssertTrue(!String(questionDict.correct).isEmpty)
             
-            XCTAssertTrue(allKeys.contains("Question"))
-            
-            XCTAssertTrue(allKeys.contains("Correct answer index"))
-            
-            let allAnswers = questionDict["Answers"] as! Array<AnyObject>
-            
-            XCTAssertNotNil(allAnswers)
-            
-            XCTAssertTrue(allAnswers.count == 4)
+            XCTAssertTrue(questionDict.answers.count == 4)
         }
         
     }
     
-    func testRetrievePlistPath() {
+    func testRetrievePlistURL() {
         
         let fileHandler = FileHandler()
         
-        XCTAssertThrowsError(try fileHandler.retrievePlistPath(filename: "Hello")) { error in
+        XCTAssertThrowsError(try fileHandler.retrievePlistURL(filename: "Hello")) { error in
             XCTAssertEqual(error as? ParsingError, ParsingError.fileNotFound)
         }
     }
     
-    func testRetrieveXMLContent() {
+    func testRetrievePlistData() {
         
         let fileHandler = FileHandler()
         
-        XCTAssertThrowsError(try fileHandler.retrieveXMLContent(path: "Hello")) { error in
-            XCTAssertEqual(error as? ParsingError, ParsingError.fileNotFound)
+        XCTAssertThrowsError(try fileHandler.retrievePlistData(plistURL: URL(fileURLWithPath: "Hello"))) { error in
+            XCTAssertEqual(error as? ParsingError, nil)
         }
     }
     
-    func testRetrievePropertyList() {
+    func testRetrievePlistContent() {
         
         let fileHandler = FileHandler()
         
-        XCTAssertThrowsError(try fileHandler.retrievePropertyList(xmlData: Data())) { error in
-            XCTAssertEqual(error as? ParsingError, ParsingError.serializationError)
+        XCTAssertThrowsError(try fileHandler.retrievePlistContent(plistData: Data([1]))) { error in
+            XCTAssertEqual(error as? ParsingError, nil)
         }
     }
 }
