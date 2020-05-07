@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AC427CD834D831763DDB877 /* Pods_Quizzy_QuizzyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A141F797253A06B170E76E /* Pods_Quizzy_QuizzyUITests.framework */; };
+		2B4FE5BE246450AA00020A93 /* QuestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79B75C2464215F00BE1A28 /* QuestionsManager.swift */; };
 		2B63A4DF245728AD0092AF67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A4DE245728AD0092AF67 /* AppDelegate.swift */; };
 		2B63A4E1245728AD0092AF67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A4E0245728AD0092AF67 /* SceneDelegate.swift */; };
 		2B63A4E3245728AD0092AF67 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A4E2245728AD0092AF67 /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 		2B63A501245728B20092AF67 /* QuizzyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A500245728B20092AF67 /* QuizzyUITests.swift */; };
 		2B79B75B24641DA000BE1A28 /* Questions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B79B75A24641DA000BE1A28 /* Questions.plist */; };
 		2B79B75D2464215F00BE1A28 /* QuestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79B75C2464215F00BE1A28 /* QuestionsManager.swift */; };
+		2B79B75F24644E8400BE1A28 /* QuestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79B75C2464215F00BE1A28 /* QuestionsManager.swift */; };
 		2BA4466E2459946900CB03D8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2BA4466D2459946900CB03D8 /* Lottie */; };
 		2BA446E02459952700CB03D8 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446DF2459952700CB03D8 /* LottieView.swift */; };
 		2BA446E624599C4700CB03D8 /* Timer.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA446E524599C4700CB03D8 /* Timer.json */; };
@@ -527,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4FE5BE246450AA00020A93 /* QuestionsManager.swift in Sources */,
 				2B63A4F6245728B20092AF67 /* QuizzyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B63A501245728B20092AF67 /* QuizzyUITests.swift in Sources */,
+				2B79B75F24644E8400BE1A28 /* QuestionsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

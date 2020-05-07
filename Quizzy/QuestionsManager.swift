@@ -21,31 +21,61 @@ class QuestionsManager {
         self.filename = filename
     }
 
-    func handle() {
+    func handle() throws {
 
-        let data = fileHandler.readData(filename: filename)
+        let data = try fileHandler.readData(filename: filename)
     }
 }
 
 class FileHandler {
 
-    func readData(filename: String) -> [String: Dictionary<String, AnyObject>] {
+    func readData(filename: String) throws -> [String: Dictionary<String, AnyObject>] {
+        
+        let plistPath = try retrievePlistPath(filename: filename)
+        
+        let plistXML = try retrieveXMLContent(path: plistPath)
+        
+        let plistData = try retrievePropertyList(xmlData: plistXML)
+        
+        return plistData
+    }
+    
+    func retrievePlistPath(filename: String) throws -> String {
+        
+        guard let plistPath = Bundle.main.path(forResource: filename, ofType: "plist") else {
+            
+            throw ParsingError.fileNotFound
+        }
+        
+        return plistPath
+    }
+    
+    func retrieveXMLContent(path: String) throws -> Data {
+        
+        guard let plistXML = FileManager.default.contents(atPath: path) else {
+            
+            throw ParsingError.fileNotFound
+        }
+        
+        return plistXML
+    }
+    
+    func retrievePropertyList(xmlData: Data) throws -> [String: Dictionary<String, AnyObject>] {
         
         var propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml
         
-        var plistData: [String: Dictionary<String, AnyObject>] = [:]
-        
-        let plistPath: String? = Bundle.main.path(forResource: filename, ofType: "plist")!
-        
-        let plistXML = FileManager.default.contents(atPath: plistPath!)!
-        
-        do {
-            plistData = try PropertyListSerialization.propertyList(from: plistXML, options: .mutableContainersAndLeaves, format: &propertyListFormat) as! [String:Dictionary<String, AnyObject>]
-
-        } catch {
-            print("Error reading plist: \(error), format: \(propertyListFormat)")
+        guard let plistData = try? (PropertyListSerialization.propertyList(from: xmlData, options: .mutableContainersAndLeaves, format: &propertyListFormat) as! [String: Dictionary<String, AnyObject>]) else
+        {
+            throw ParsingError.serializationError
         }
         
         return plistData
     }
+}
+
+enum ParsingError: Error {
+    
+    case fileNotFound
+    
+    case serializationError
 }

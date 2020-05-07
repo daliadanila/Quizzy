@@ -23,7 +23,7 @@ class QuizzyTests: XCTestCase {
        
         let fileHandler = FileHandler()
         
-        let data = fileHandler.readData(filename: "Questions")
+        let data = try fileHandler.readData(filename: "Questions")
         
         XCTAssertNotNil(fileHandler)
         
@@ -35,7 +35,7 @@ class QuizzyTests: XCTestCase {
         
         let fileHandler = FileHandler()
         
-        let data = fileHandler.readData(filename: "Questions") as [String: Dictionary<String, AnyObject>]
+        let data = try fileHandler.readData(filename: "Questions") as [String: Dictionary<String, AnyObject>]
     
         XCTAssertNotNil(data.keys)
         
@@ -60,5 +60,32 @@ class QuizzyTests: XCTestCase {
             XCTAssertTrue(allAnswers.count == 4)
         }
         
+    }
+    
+    func testRetrievePlistPath() {
+        
+        let fileHandler = FileHandler()
+        
+        XCTAssertThrowsError(try fileHandler.retrievePlistPath(filename: "Hello")) { error in
+            XCTAssertEqual(error as? ParsingError, ParsingError.fileNotFound)
+        }
+    }
+    
+    func testRetrieveXMLContent() {
+        
+        let fileHandler = FileHandler()
+        
+        XCTAssertThrowsError(try fileHandler.retrieveXMLContent(path: "Hello")) { error in
+            XCTAssertEqual(error as? ParsingError, ParsingError.fileNotFound)
+        }
+    }
+    
+    func testRetrievePropertyList() {
+        
+        let fileHandler = FileHandler()
+        
+        XCTAssertThrowsError(try fileHandler.retrievePropertyList(xmlData: Data())) { error in
+            XCTAssertEqual(error as? ParsingError, ParsingError.serializationError)
+        }
     }
 }
