@@ -171,7 +171,7 @@ struct CardView: View {
             
             delayWithSeconds(1) {
                 
-                withAnimation(.linear(duration: 1.0)) {
+                withAnimation(.easeOut(duration: 1.0)) {
                     
                     if self.currentIndex == self.nextIndex {
                         

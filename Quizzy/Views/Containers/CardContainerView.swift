@@ -30,7 +30,7 @@ struct CardContainerView: View {
                                 if self.questionCount == i
                                 {
                                     CardView(currentIndex: i, totalNumber: 10, nextIndex: self.$questionCount)
-                                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                                        .transition(.slide)
                                 }
                         }
                         
