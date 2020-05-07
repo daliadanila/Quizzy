@@ -19,16 +19,46 @@ class QuizzyTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testQuestionsFileHasContent() throws {
+       
+        let fileHandler = FileHandler()
+        
+        let data = fileHandler.readData(filename: "Questions")
+        
+        XCTAssertNotNil(fileHandler)
+        
+        XCTAssertNotNil(data)
+        
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testQuestionsFileHasExpectedStructure() throws {
+        
+        let fileHandler = FileHandler()
+        
+        let data = fileHandler.readData(filename: "Questions") as [String: Dictionary<String, AnyObject>]
+    
+        XCTAssertNotNil(data.keys)
+        
+        for question in data {
+            
+            let questionDict = question.value
+            
+            let allKeys = questionDict.keys
+            
+            XCTAssertTrue(allKeys.contains("Category"))
+            
+            XCTAssertTrue(allKeys.contains("Answers"))
+            
+            XCTAssertTrue(allKeys.contains("Question"))
+            
+            XCTAssertTrue(allKeys.contains("Correct answer index"))
+            
+            let allAnswers = questionDict["Answers"] as! Array<AnyObject>
+            
+            XCTAssertNotNil(allAnswers)
+            
+            XCTAssertTrue(allAnswers.count == 4)
         }
+        
     }
-
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<dict>
+		<key>Category</key>
+		<string>Music</string>
+		<key>Question</key>
+		<string>Choose second option</string>
+		<key>Answers</key>
+		<array>
+			<string>Option 1</string>
+			<string>Option 2</string>
+			<string>Option 3</string>
+			<string>Option 4</string>
+		</array>
+		<key>Correct answer index</key>
+		<integer>1</integer>
+	</dict>
+	<key>1</key>
+	<dict>
+		<key>Category</key>
+		<string>General Knowledge</string>
+		<key>Question</key>
+		<string>Choose third option</string>
+		<key>Answers</key>
+		<array>
+			<string>Option 1</string>
+			<string>Option 2</string>
+			<string>Option 3</string>
+			<string>Option 4</string>
+		</array>
+		<key>Correct answer index</key>
+		<integer>2</integer>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>Category</key>
+		<string>Travel</string>
+		<key>Question</key>
+		<string>Choose first option</string>
+		<key>Answers</key>
+		<array>
+			<string>Option 1</string>
+			<string>Option 2</string>
+			<string>Option 3</string>
+			<string>Option 4</string>
+		</array>
+		<key>Correct answer index</key>
+		<integer>0</integer>
+	</dict>
+</dict>
+</plist>
