@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1AC427CD834D831763DDB877 /* Pods_Quizzy_QuizzyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A141F797253A06B170E76E /* Pods_Quizzy_QuizzyUITests.framework */; };
-		2B4FE5BE246450AA00020A93 /* QuestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79B75C2464215F00BE1A28 /* QuestionsManager.swift */; };
+		2B4FE5BE246450AA00020A93 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79B75C2464215F00BE1A28 /* QuestionRepository.swift */; };
+		2B4FE5C424656D2F00020A93 /* QuestionCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FE5C324656D2F00020A93 /* QuestionCardViewModel.swift */; };
+		2B4FE5C524656D2F00020A93 /* QuestionCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FE5C324656D2F00020A93 /* QuestionCardViewModel.swift */; };
 		2B63A4DF245728AD0092AF67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A4DE245728AD0092AF67 /* AppDelegate.swift */; };
 		2B63A4E1245728AD0092AF67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A4E0245728AD0092AF67 /* SceneDelegate.swift */; };
 		2B63A4E3245728AD0092AF67 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A4E2245728AD0092AF67 /* ContentView.swift */; };
@@ -18,8 +20,8 @@
 		2B63A4F6245728B20092AF67 /* QuizzyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A4F5245728B20092AF67 /* QuizzyTests.swift */; };
 		2B63A501245728B20092AF67 /* QuizzyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63A500245728B20092AF67 /* QuizzyUITests.swift */; };
 		2B79B75B24641DA000BE1A28 /* Questions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B79B75A24641DA000BE1A28 /* Questions.plist */; };
-		2B79B75D2464215F00BE1A28 /* QuestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79B75C2464215F00BE1A28 /* QuestionsManager.swift */; };
-		2B79B75F24644E8400BE1A28 /* QuestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79B75C2464215F00BE1A28 /* QuestionsManager.swift */; };
+		2B79B75D2464215F00BE1A28 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79B75C2464215F00BE1A28 /* QuestionRepository.swift */; };
+		2B79B75F24644E8400BE1A28 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79B75C2464215F00BE1A28 /* QuestionRepository.swift */; };
 		2BA4466E2459946900CB03D8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2BA4466D2459946900CB03D8 /* Lottie */; };
 		2BA446E02459952700CB03D8 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA446DF2459952700CB03D8 /* LottieView.swift */; };
 		2BA446E624599C4700CB03D8 /* Timer.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA446E524599C4700CB03D8 /* Timer.json */; };
@@ -57,6 +59,7 @@
 		0567AC859B0B6650D6BA1899 /* Pods-Quizzy-QuizzyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzy-QuizzyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Quizzy-QuizzyUITests/Pods-Quizzy-QuizzyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		13E7320A06237FC0B351ABCC /* Pods-Quizzy-QuizzyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzy-QuizzyTests.debug.xcconfig"; path = "Target Support Files/Pods-Quizzy-QuizzyTests/Pods-Quizzy-QuizzyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		28588C5452E7EC0E32C939C3 /* Pods-Quizzy-QuizzyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzy-QuizzyTests.release.xcconfig"; path = "Target Support Files/Pods-Quizzy-QuizzyTests/Pods-Quizzy-QuizzyTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B4FE5C324656D2F00020A93 /* QuestionCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCardViewModel.swift; sourceTree = "<group>"; };
 		2B63A4DB245728AD0092AF67 /* Quizzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B63A4DE245728AD0092AF67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B63A4E0245728AD0092AF67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +75,7 @@
 		2B63A500245728B20092AF67 /* QuizzyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzyUITests.swift; sourceTree = "<group>"; };
 		2B63A502245728B20092AF67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B79B75A24641DA000BE1A28 /* Questions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Questions.plist; sourceTree = "<group>"; };
-		2B79B75C2464215F00BE1A28 /* QuestionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsManager.swift; sourceTree = "<group>"; };
+		2B79B75C2464215F00BE1A28 /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
 		2BA446DF2459952700CB03D8 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		2BA446E524599C4700CB03D8 /* Timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timer.json; sourceTree = "<group>"; };
 		2BA446E82459AA2800CB03D8 /* RectangleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleImageView.swift; sourceTree = "<group>"; };
@@ -136,6 +139,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2B4FE5C224656D0600020A93 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B4FE5C324656D2F00020A93 /* QuestionCardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		2B63A4D2245728AD0092AF67 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +172,7 @@
 		2B63A4DD245728AD0092AF67 /* Quizzy */ = {
 			isa = PBXGroup;
 			children = (
+				2B4FE5C224656D0600020A93 /* ViewModels */,
 				2BD6AA082458399300358444 /* Views */,
 				2B63A4DE245728AD0092AF67 /* AppDelegate.swift */,
 				2B63A4E0245728AD0092AF67 /* SceneDelegate.swift */,
@@ -171,7 +183,7 @@
 				2B79B75A24641DA000BE1A28 /* Questions.plist */,
 				2B63A4E6245728B10092AF67 /* Preview Content */,
 				2BA446F1245C81F000CB03D8 /* TimeUtils.swift */,
-				2B79B75C2464215F00BE1A28 /* QuestionsManager.swift */,
+				2B79B75C2464215F00BE1A28 /* QuestionRepository.swift */,
 			);
 			path = Quizzy;
 			sourceTree = "<group>";
@@ -521,7 +533,8 @@
 				2B63A4E3245728AD0092AF67 /* ContentView.swift in Sources */,
 				2BD6AA0E2458828B00358444 /* CardView.swift in Sources */,
 				2BD6AA10245889E000358444 /* CardContainerView.swift in Sources */,
-				2B79B75D2464215F00BE1A28 /* QuestionsManager.swift in Sources */,
+				2B4FE5C424656D2F00020A93 /* QuestionCardViewModel.swift in Sources */,
+				2B79B75D2464215F00BE1A28 /* QuestionRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +542,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B4FE5BE246450AA00020A93 /* QuestionsManager.swift in Sources */,
+				2B4FE5C524656D2F00020A93 /* QuestionCardViewModel.swift in Sources */,
+				2B4FE5BE246450AA00020A93 /* QuestionRepository.swift in Sources */,
 				2B63A4F6245728B20092AF67 /* QuizzyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,7 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B63A501245728B20092AF67 /* QuizzyUITests.swift in Sources */,
-				2B79B75F24644E8400BE1A28 /* QuestionsManager.swift in Sources */,
+				2B79B75F24644E8400BE1A28 /* QuestionRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

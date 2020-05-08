@@ -7,11 +7,10 @@
 //
 
 import UIKit
+import Resolver
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -34,4 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+extension Resolver: ResolverRegistering {
+    
+  public static func registerAllServices() {
+    
+    register { LocalQuestionRepository(filename: "Questions") as QuestionRepository }.scope(application)
+    
+  }
+}
+
 

@@ -9,22 +9,38 @@
 import Foundation
 import Combine
 
-class QuestionsManager {
+
+
+class BaseQuestionRepository  {
+ 
+  @Published var questions = [QuestionInfo]()
+}
+
+protocol QuestionRepository : BaseQuestionRepository {
+    
+    func loadData()
+}
+
+
+class LocalQuestionRepository : BaseQuestionRepository, QuestionRepository, ObservableObject {
 
     let fileHandler: FileHandler
     
     let filename: String
     
-    init(fileHandler: FileHandler, filename: String) {
+    init(fileHandler: FileHandler = FileHandler(), filename: String) {
         
         self.fileHandler = fileHandler
         
         self.filename = filename
     }
 
-    func handle() throws {
-
-        let data = try fileHandler.readData(filename: filename)
+    func loadData() {
+        
+        if let data = try? fileHandler.readData(filename: filename) {
+            
+            self.questions = Array(data.values)
+        }
     }
 }
 
@@ -74,6 +90,7 @@ enum ParsingError: Error {
 }
 
 struct QuestionInfo: Decodable {
+    
     private enum CodingKeys: String, CodingKey {
         case category, question, answers, correct
     }

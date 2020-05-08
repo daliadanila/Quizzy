@@ -2,9 +2,15 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - Resolver (1.1.2)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/luckychris/Chameleon.git`)
+  - Resolver
+
+SPEC REPOS:
+  trunk:
+    - Resolver
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -17,7 +23,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Resolver: e04ca5a9a19906f2e5cdceb2b90edd3b5daed049
 
-PODFILE CHECKSUM: eb6543932317556a3e58ffe63b4c0da29705b0f8
+PODFILE CHECKSUM: 8af3d5466fb7d0373f83e464ac7cd1dc4a691ecf
 
 COCOAPODS: 1.9.1

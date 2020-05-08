@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Quizzy-QuizzyTests/Pods-Quizzy-QuizzyTests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework
+${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework

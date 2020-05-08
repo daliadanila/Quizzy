@@ -4,6 +4,7 @@ def pods
   
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/luckychris/Chameleon.git', :inhibit_warnings => true
   
+  pod 'Resolver'
 end
 
 
