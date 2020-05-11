@@ -10,18 +10,13 @@ import SwiftUI
 import ChameleonFramework
 
 struct CardView: View {
+
+    @State private var correctAnswerIndex: Int = -1
+    @State private var tappedAnswerIndex: Int = -1
     
-    @State private var firstPressed: Bool = false
-    @State private var secondPressed: Bool = false
-    @State private var thirdPressed: Bool = false
-    @State private var forthPressed: Bool = false
+    @State private var stopTimer: Bool = false
     
-    @State private var firstCorrect: Bool = false
-    @State private var secondCorrect: Bool = false
-    @State private var thirdCorrect: Bool = false
-    @State private var forthCorrect: Bool = false
-    
-    @State private var answerSelected: Bool = false
+    @ObservedObject var cardVM: CardViewModel
     
     var currentIndex: Int
     
@@ -38,7 +33,9 @@ struct CardView: View {
                     
                     Spacer()
                     
-                    Text("Question \(self.currentIndex)/\(self.totalNumber)").style(.h6)
+                    Text("Question \(self.currentIndex + 1)/\(self.totalNumber)")
+                        .style(.h6)
+                        .accessibility(identifier: "questionCount")
                     
                     Spacer()
                     
@@ -47,11 +44,15 @@ struct CardView: View {
                 .padding(.leading, 50)
                 .padding(.trailing, 50)
                 
-                LottieView(filename: "Timer", stop: $answerSelected).frame(width: 70)
+                LottieView(filename: "Timer", stop: $stopTimer).frame(width: 70)
                 
-                Text("Category").style(.h7)
+                Text("\(cardVM.question.category)")
+                    .style(.h7)
+                    .accessibility(identifier: "questionCategory")
                 
-                Text("Question").style(.h2)
+                Text("\(cardVM.question.question)")
+                    .style(.h2)
+                    .accessibility(identifier: "questionText")
                 
             }
         }
@@ -62,64 +63,25 @@ struct CardView: View {
                 
                 Spacer()
                 
-                Button(action: {
+                ForEach (0..<4) { i in
                     
-                    self.markSelectedAnswer(buttonIndex: 1)
-                    
-                    self.answerWasSelected()
-                    
-                    
-                }, label: {
-                    VStack {
-                        Text("First answer").style(.h6) .accessibility(identifier: "firstAnswerButton")
+                    Button(action: {
                         
-                    }.overlayStyle(isPressed: $firstPressed, isCorrect: $firstCorrect)
-                })
-                    .padding(.top, 10)
-                
-                Button(action: {
-                    
-                    self.markSelectedAnswer(buttonIndex: 2)
-                    
-                    self.answerWasSelected()
-                    
-                }, label: {
-                    VStack {
-                        Text("Second answer").style(.h6).accessibility(identifier: "secondAnswerButton")
+                        self.tappedAnswerIndex = i
                         
-                    }.overlayStyle(isPressed: $secondPressed, isCorrect: $secondCorrect)
-                })
-                    .padding(.top, 10)
-                
-                
-                Button(action: {
-                    
-                    self.markSelectedAnswer(buttonIndex: 3)
-                    
-                    self.answerWasSelected()
-                    
-                }, label: {
-                    VStack {
-                        Text("Third answer").style(.h6).accessibility(identifier: "thirdAnswerButton")
+                        self.stopTimer = true
                         
-                    }.overlayStyle(isPressed: $thirdPressed, isCorrect: $thirdCorrect)
-                })
-                    .padding(.top, 10)
-                
-                
-                Button(action: {
-                    
-                    self.markSelectedAnswer(buttonIndex: 4)
-                    
-                    self.answerWasSelected()
-                    
-                }, label: {
-                    VStack {
-                        Text("Forth answer").style(.h6).accessibility(identifier: "forthAnswerButton")
+                        self.goToNextQuestion(delaySecs: 1)
                         
-                    }.overlayStyle(isPressed: $forthPressed, isCorrect: $forthCorrect)
-                })
-                    .padding(.top, 10)
+                        
+                    }, label: {
+                        VStack {
+                            Text("\(self.cardVM.question.answers[i])").style(.h6) .accessibility(identifier: "answerButton\(i)")
+                            
+                        }.overlayStyle(isPressed: i == self.tappedAnswerIndex, isCorrect: i == self.correctAnswerIndex)
+                    })
+                        .padding(.top, 10)
+                }
                 
                 Spacer()
             }
@@ -155,19 +117,12 @@ struct CardView: View {
         }
         
     }
-    
-    func answerWasSelected() {
-        
-        self.answerSelected = true
-        
-        self.goToNextQuestion(delaySecs: 1)
-    }
-    
+
     func goToNextQuestion(delaySecs: Double) {
         
         delayWithSeconds(delaySecs) {
             
-            self.secondCorrect = true
+            self.correctAnswerIndex = self.cardVM.question.correct
             
             delayWithSeconds(1) {
                 
@@ -180,31 +135,6 @@ struct CardView: View {
                 }
             }
             
-        }
-    }
-    
-    func markSelectedAnswer(buttonIndex: Int) {
-        
-        self.firstPressed = false
-        
-        self.secondPressed = false
-        
-        self.thirdPressed = false
-        
-        self.forthPressed = false
-        
-        switch buttonIndex {
-        case 1:
-            self.firstPressed.toggle()
-        case 2:
-            self.secondPressed.toggle()
-        case 3:
-            self.thirdPressed.toggle()
-        case 4:
-            self.forthPressed.toggle()
-            
-        default:
-            self.firstPressed.toggle()
         }
     }
 }

@@ -4,6 +4,8 @@
 <dict>
 	<key>0</key>
 	<dict>
+		<key>id</key>
+		<string>0</string>
 		<key>category</key>
 		<string>Music</string>
 		<key>question</key>
@@ -20,6 +22,8 @@
 	</dict>
 	<key>1</key>
 	<dict>
+		<key>id</key>
+		<string>1</string>
 		<key>category</key>
 		<string>General Knowledge</string>
 		<key>question</key>
@@ -36,6 +40,8 @@
 	</dict>
 	<key>2</key>
 	<dict>
+		<key>id</key>
+		<string>2</string>
 		<key>category</key>
 		<string>Travel</string>
 		<key>question</key>

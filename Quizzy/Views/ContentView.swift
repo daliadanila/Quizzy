@@ -27,7 +27,7 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: CardContainerView().hideNavigationBar(), isActive: $startedPlaying) {
+                        NavigationLink(destination: CardStackedView().hideNavigationBar(), isActive: $startedPlaying) {
                             
                             Button(action: {
                                 

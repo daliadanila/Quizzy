@@ -33,6 +33,10 @@ class LocalQuestionRepository : BaseQuestionRepository, QuestionRepository, Obse
         self.fileHandler = fileHandler
         
         self.filename = filename
+        
+        super.init()
+        
+        self.loadData()
     }
 
     func loadData() {
@@ -92,9 +96,10 @@ enum ParsingError: Error {
 struct QuestionInfo: Decodable {
     
     private enum CodingKeys: String, CodingKey {
-        case category, question, answers, correct
+        case id, category, question, answers, correct
     }
     
+    let id: String
     let category: String
     let question: String
     let answers: [String]

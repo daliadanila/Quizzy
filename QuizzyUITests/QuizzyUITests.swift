@@ -40,10 +40,10 @@ class QuizzyUITests: XCTestCase {
         
         startButton.tap()
         
-        let questionCountLabel = app.staticTexts["Question 1/10"]
+        let questionCountLabel = app.staticTexts["questionCount"]
         
         XCTAssert(questionCountLabel.exists)
-        XCTAssertEqual(questionCountLabel.label, "Question 1/10")
+        XCTAssert(questionCountLabel.label.contains("Question "))
         
         let pointsCountLabel = app.staticTexts["0 Points"]
         
@@ -55,15 +55,13 @@ class QuizzyUITests: XCTestCase {
         XCTAssert(livesCountLabel.exists)
         XCTAssertEqual(livesCountLabel.label, "3 Lives")
         
-        let categoryLabel = app.staticTexts["Category"]
+        let categoryLabel = app.staticTexts["questionCategory"]
         
         XCTAssert(categoryLabel.exists)
-        XCTAssertEqual(categoryLabel.label, "Category")
         
-        let questionLabel = app.staticTexts["Question"]
+        let questionLabel = app.staticTexts["questionText"]
         
         XCTAssert(questionLabel.exists)
-        XCTAssertEqual(questionLabel.label, "Question")
         
         let firstAnswerButton       = app.buttons["firstAnswerButton"]
         let secondAnswerButton      = app.buttons["secondAnswerButton"]

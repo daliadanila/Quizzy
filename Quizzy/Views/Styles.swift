@@ -24,9 +24,9 @@ public struct PrimaryButtonStyle: ButtonStyle {
 
 struct SelectedAnswerOverlayStyle: ViewModifier {
     
-    @Binding var isPressed: Bool
+    var isPressed: Bool
     
-    @Binding var isCorrect: Bool
+    var isCorrect: Bool
     
     func body(content: Content) -> some View {
         content

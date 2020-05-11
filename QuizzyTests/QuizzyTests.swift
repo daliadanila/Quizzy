@@ -45,6 +45,8 @@ class QuizzyTests: XCTestCase {
             
             let questionDict = question.value
             
+            XCTAssertTrue(!questionDict.id.isEmpty)
+            
             XCTAssertTrue(!questionDict.category.isEmpty)
             
             XCTAssertTrue(!questionDict.question.isEmpty)

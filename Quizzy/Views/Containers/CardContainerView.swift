@@ -1,5 +1,5 @@
 //
-//  CardContainerView.swift
+//  CardStackedView.swift
 //  Quizzy
 //
 //  Created by Dalia on 28/04/2020.
@@ -9,11 +9,13 @@
 import SwiftUI
 import ChameleonFramework
 
-struct CardContainerView: View {
+struct CardStackedView: View {
+    
+    @ObservedObject var cardStackVM = CardStackedViewModel()
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @State var questionCount = 1
+    @State var questionCount = 0
     
     var body: some View {
         
@@ -23,13 +25,13 @@ struct CardContainerView: View {
             {
                 ZStack(alignment:.top)
                 {
-                    ForEach(1...10, id:\.self)
+                    ForEach(0..<cardStackVM.cardViewModels.count)
                     { i in
                         ZStack()
                             {
                                 if self.questionCount == i
                                 {
-                                    CardView(currentIndex: i, totalNumber: 10, nextIndex: self.$questionCount)
+                                    CardView(cardVM: self.cardStackVM.cardViewModels[i], currentIndex: i, totalNumber: self.cardStackVM.cardViewModels.count, nextIndex: self.$questionCount)
                                         .transition(.slide)
                                 }
                         }
@@ -65,7 +67,7 @@ struct CardContainerView: View {
             }
         }
         
-        func makeCardContainerView() -> some View {
+        func makeCardStackedView() -> some View {
             
             ZStack {
                 
@@ -83,14 +85,14 @@ struct CardContainerView: View {
             }
         }
         
-        return makeCardContainerView()
+        return makeCardStackedView()
         
     }
 }
 
 
-struct CardContainerView_Previews: PreviewProvider {
+struct CardStackedView_Previews: PreviewProvider {
     static var previews: some View {
-        CardContainerView()
+        CardStackedView()
     }
 }
