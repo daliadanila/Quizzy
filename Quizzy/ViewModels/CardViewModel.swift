@@ -12,17 +12,22 @@ import Resolver
 
 
 class CardViewModel: ObservableObject, Identifiable  {
+    
     @Injected var questionRepository: QuestionRepository
     
     @Published var question: QuestionInfo
+    
+    @Published var totalCount: Int
     
     var id: String = ""
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(question: QuestionInfo) {
+    init(question: QuestionInfo, totalCount: Int) {
         
         self.question = question
+        
+        self.totalCount = totalCount
         
         $question
         .compactMap { $0.id }

@@ -21,7 +21,7 @@ class CardStackedViewModel: ObservableObject {
     init() {
         questionRepository.$questions.map { questions in
             questions.map { question in
-                CardViewModel(question: question)
+                CardViewModel(question: question, totalCount: questions.count)
             }
         }
         .assign(to: \.cardViewModels, on: self)

@@ -31,7 +31,7 @@ struct CardStackedView: View {
                             {
                                 if self.questionCount == i
                                 {
-                                    CardView(cardVM: self.cardStackVM.cardViewModels[i], currentIndex: i, totalNumber: self.cardStackVM.cardViewModels.count, nextIndex: self.$questionCount)
+                                    CardView(cardVM: self.cardStackVM.cardViewModels[i], currentIndex: i,  nextIndex: self.$questionCount)
                                         .transition(.slide)
                                 }
                         }

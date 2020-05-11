@@ -20,8 +20,6 @@ struct CardView: View {
     
     var currentIndex: Int
     
-    var totalNumber: Int
-    
     @Binding var nextIndex: Int
     
     var body: some View {
@@ -33,7 +31,7 @@ struct CardView: View {
                     
                     Spacer()
                     
-                    Text("Question \(self.currentIndex + 1)/\(self.totalNumber)")
+                    Text("Question \(self.currentIndex + 1)/\(self.cardVM.totalCount)")
                         .style(.h6)
                         .accessibility(identifier: "questionCount")
                     
