@@ -47,16 +47,31 @@ struct ContentView: View {
                 }
                     
                 .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
+                    Image("game")
+                    Text("Game")
                 }
                 
-                Text("The content of the second view")
-                    .tabItem {
-                        Image(systemName: "folder")
-                        Text("Settings")
+                List {
+                    
+                    Section {
+                        
+                        Text("Rate")
+                        
+                        Text("Support")
+                        
+                        Text("Terms and Conditions")
+                        
+                    }
+                }
+                .listStyle(GroupedListStyle())
+                    
+                .tabItem {
+                    Image("settings")
+                    Text("Settings")
                 }
             }
+            
+            .accentColor(Color(FlatPurpleDark()))
             
             
         }

@@ -48,7 +48,12 @@ class LocalQuestionRepository : BaseQuestionRepository, QuestionRepository, Obse
     }
 }
 
-class FileHandler {
+protocol DataFromFile {
+    
+    func readData(filename: String) throws -> [String: QuestionInfo]
+}
+
+class FileHandler : DataFromFile {
 
     func readData(filename: String) throws -> [String: QuestionInfo] {
         
@@ -89,8 +94,6 @@ class FileHandler {
 enum ParsingError: Error {
     
     case fileNotFound
-    
-    case serializationError
 }
 
 struct QuestionInfo: Decodable {
